@@ -1,7 +1,7 @@
 # Setup
 title: Youhan's Homepage  # 简洁的网站标题，类似导师的格式
 description: Personal homepage of Youhan Huang, a third-year undergraduate student specializing in 3D computer vision, point cloud understanding, and AI applications  # 优化描述，包含关键词
-url: https://johanhuang2005.github.io
+url: https://JohanHuang2005.github.io
 avatar: /me.jpg
 paginate: 5
 permalink: pretty
