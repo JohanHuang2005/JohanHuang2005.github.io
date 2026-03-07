@@ -49,7 +49,7 @@ Aug 2024 – Present
 **Beijing University of Posts and Telecommunications, School of Artificial Intelligence, Pattern Recognition and Intelligent Vision Lab**
 
 Apr 2025 – Present
-- Exploring 3D reconstruction methods for complex transparent objects, targeting submission to CVPR 2026.
+- Exploring 3D reconstruction methods for complex transparent objects. <strong>Submitted to ECCV 2026</strong>.
 
 #### Project Leader of Innovation Training Program
 **Beijing University of Posts and Telecommunications**
@@ -75,7 +75,7 @@ Oct 2023 – Jun 2024
 
 ### Research Interests & Personal Statement
 
-**Passion for 3D Vision**: I have developed a strong interest and solid foundation in 3D computer vision, especially in point cloud understanding, reconstruction, and perception under complex scenarios. Through multiple research internships at top-tier labs, I have worked on transparent object reconstruction for CVPR submission and radar-based human center estimation—both requiring deep technical insight and persistent experimentation.
+**Passion for 3D Vision**: I have developed a strong interest and solid foundation in 3D computer vision, especially in point cloud understanding, reconstruction, and perception under complex scenarios. Through multiple research internships at top-tier labs, I have worked on transparent object reconstruction (submitted to ECCV 2026) and radar-based human center estimation—both requiring deep technical insight and persistent experimentation.
 
 **Self-driven and Execution-oriented**: I am highly self-driven and results-oriented: I independently led an innovation project, contributed actively to algorithm optimization in research teams, and continuously improved through hands-on engineering. I deeply value lifelong learning and independent thinking, which motivate me to dive into unfamiliar frameworks, explore state-of-the-art techniques, and adapt quickly to new challenges.
 
