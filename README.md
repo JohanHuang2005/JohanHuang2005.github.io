@@ -17,7 +17,6 @@
 |-----------|------|
 | `_config.yml` | 站点配置（标题、描述、插件、作者等） |
 | `index.html` | 首页（About Me 页面） |
-| `about.md` | About 页面内容 |
 | `404.html` | 404 错误页 |
 | `Gemfile` / `Gemfile.lock` | Ruby 依赖 |
 | `README.md` | 项目说明 |
