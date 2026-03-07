@@ -48,7 +48,7 @@ Aug 2024 – Present
 #### Research Internship
 **Beijing University of Posts and Telecommunications, School of Artificial Intelligence, Pattern Recognition and Intelligent Vision Lab**
 
-Apr 2025 – Present
+Apr 2025 – Mar 2026
 - Exploring 3D reconstruction methods for complex transparent objects. <strong>Submitted to ECCV 2026</strong>.
 
 #### Project Leader of Innovation Training Program

@@ -1,5 +1,6 @@
 <div class="home-header pure-menu pure-menu-horizontal">
   <div class="home-header-bar">
+    {% comment %} Dates/Tags 归档菜单 - 页面为空时暂时隐藏
     {% if site.data.archive %}
     <ul class="home-header-menu pure-menu-list">
       {% for item in site.data.archive %}
@@ -9,5 +10,6 @@
       {% endfor %}
     </ul>
     {% endif %}
+    {% endcomment %}
   </div>
 </div>
