@@ -90,3 +90,49 @@ footer {
     width: 75%;
   }
 }
+
+// About section: blurred original content + maintenance overlay
+.about-maintenance-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-maintenance-backdrop {
+  filter: blur(8px);
+  transform: translateZ(0);
+  user-select: none;
+  pointer-events: none;
+}
+
+.about-maintenance-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(3rem, 12vh, 6rem) var(--spacer-3) var(--spacer-3);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(2px);
+}
+
+.about-maintenance-text {
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gray-700);
+  text-transform: uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+  .about-maintenance-overlay {
+    background: rgba(33, 37, 41, 0.62);
+  }
+
+  .about-maintenance-text {
+    color: var(--gray-200);
+  }
+}
