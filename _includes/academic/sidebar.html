@@ -4,16 +4,15 @@
 
 <aside class="panel-left" id="panel-left">
   <div class="panel-left-bg" id="panel-left-bg" aria-hidden="true"></div>
-  <div class="panel-left-vignette" aria-hidden="true"></div>
 
   <div class="panel-left-inner">
-    <div class="glass-profile">
-      {% if site.avatar %}
-      <div class="sidebar-avatar">
-        <img src="{{ site.avatar | relative_url }}" alt="{{ p.name_zh }}" width="120" height="144" decoding="async" fetchpriority="high">
-      </div>
-      {% endif %}
+    {% if site.avatar %}
+    <div class="sidebar-avatar-wrap">
+      <img class="sidebar-avatar-img" src="{{ site.avatar | relative_url }}" alt="{{ p.name_zh }}" width="160" height="192" decoding="async" fetchpriority="high">
+    </div>
+    {% endif %}
 
+    <div class="glass-panel glass-profile">
       <h1 class="sidebar-name">{{ p.name_zh }}</h1>
       <p class="sidebar-name-en">{{ p.name_en }}</p>
 
@@ -43,7 +42,7 @@
       </div>
     </div>
 
-    <nav class="glass-nav sidebar-nav" aria-label="Section navigation">
+    <nav class="glass-panel glass-nav sidebar-nav" aria-label="Section navigation">
       <button type="button" class="sidebar-nav-btn is-active" data-page="home">
         <span class="i18n-zh">{{ loc.zh.nav.home }}</span>
         <span class="i18n-en">{{ loc.en.nav.home }}</span>

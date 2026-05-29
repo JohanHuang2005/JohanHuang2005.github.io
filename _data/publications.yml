@@ -5,7 +5,7 @@
   authors: "<strong>黄友涵</strong>, Jiajun Li, Yilin Fang, Shuai Wang, Chuheng Li"
   venue: "IEEE International Conference on Multimedia and Expo (ICME) 2026, Oral Presentation (CCF-B)"
   year: 2026
-  image: /assets/publications/pub-icme-2026.png
+  image: /assets/publications/pub-icme-2026.jpg
   links:
     paper: "https://arxiv.org/abs/2605.29852"
     code: null
@@ -19,7 +19,7 @@
   authors: "<strong>黄友涵</strong>, 合作者"
   venue: "European Conference on Computer Vision (ECCV) 2026 — 投稿中"
   year: 2026
-  image: /assets/publications/pub-eccv-2026.png
+  image: /assets/publications/pub-eccv-2026.jpg
   links:
     paper: null
     code: null
@@ -33,7 +33,7 @@
   authors: "合作者, <strong>黄友涵</strong>, 等"
   venue: "IEEE Transactions on Mobile Computing (TMC) — 投稿中 (CCF-A)"
   year: 2026
-  image: /assets/publications/pub-tmc-2026.png
+  image: /assets/publications/pub-tmc-2026.jpg
   links:
     paper: null
     code: null
