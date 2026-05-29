@@ -11,8 +11,9 @@
   --text-on-bg: rgba(255, 255, 255, 0.96);
   --link: #0071e3;
   --accent: rgba(0, 122, 255, 0.2);
-  --glass-sidebar: rgba(255, 255, 255, 0.09);
-  --glass-sidebar-border: rgba(255, 255, 255, 0.2);
+  --glass-sidebar: rgba(255, 255, 255, 0.045);
+  --glass-sidebar-border: rgba(255, 255, 255, 0.1);
+  --blur-sidebar: blur(24px) saturate(180%);
   --body-bg: #e8e8ed;
   --blur: blur(48px) saturate(220%);
 }
@@ -30,8 +31,8 @@ html[data-theme="dark"] {
   --body-color: #e8e8ed;
   --link: #64b5ff;
   --accent: rgba(10, 132, 255, 0.28);
-  --glass-sidebar: rgba(44, 44, 48, 0.14);
-  --glass-sidebar-border: rgba(255, 255, 255, 0.1);
+  --glass-sidebar: rgba(44, 44, 48, 0.07);
+  --glass-sidebar-border: rgba(255, 255, 255, 0.05);
   --body-bg: #000000;
 }
 
@@ -115,11 +116,22 @@ html[data-lang="en"] [data-lang-content="en"] {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: flex-start;
-  gap: 0.75rem;
+  justify-content: stretch;
   padding: 0.65rem 0.75rem 0.7rem;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+.sidebar-glass {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 0;
+  padding: 0.65rem 0.55rem 0.5rem;
+  border-radius: 1.15rem;
+  backdrop-filter: var(--blur-sidebar);
+  -webkit-backdrop-filter: var(--blur-sidebar);
 }
 
 .sidebar-avatar-wrap {
@@ -153,11 +165,11 @@ html[data-lang="en"] [data-lang-content="en"] {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
-.glass-profile {
+.sidebar-profile {
   width: 100%;
   flex: 0 0 auto;
   overflow: visible;
-  padding: 0.4rem 0.45rem;
+  padding: 0.35rem 0.4rem 0;
   text-align: center;
 }
 
@@ -203,7 +215,7 @@ html[data-theme="dark"] .glass-panel {
   flex-direction: column;
   align-items: center;
   gap: 0.55rem;
-  margin: 0.15rem 0 0;
+  margin: 0.45rem 0 0.35rem;
   flex: 0 0 auto;
 
   .icon-link {
@@ -226,20 +238,17 @@ html[data-theme="dark"] .glass-panel {
   }
 }
 
-.glass-nav {
+.sidebar-nav {
   width: 100%;
   flex: 0 0 auto;
   margin-top: auto;
-  padding: 0.4rem;
+  padding: 0.35rem 0 0;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  background: var(--glass-sidebar);
-  border: 1px solid var(--glass-sidebar-border);
-  box-shadow: var(--glass-shadow), var(--glass-inset);
-  backdrop-filter: var(--blur);
-  -webkit-backdrop-filter: var(--blur);
-  border-radius: 1.15rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .sidebar-nav-btn {
@@ -616,8 +625,12 @@ html[data-lang="en"] .edu-awards-services-page > .section-title.i18n-en {
     padding-bottom: 1rem;
   }
 
-  .glass-profile {
+  .sidebar-profile {
     overflow-y: visible;
+  }
+
+  .sidebar-glass {
+    min-height: 18rem;
   }
 
   .sidebar-avatar-img {
