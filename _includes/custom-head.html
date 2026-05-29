@@ -9,13 +9,12 @@
 </style>
 <script>
 (function () {
-  var lang = 'zh', theme = 'light';
+  var lang = 'en', theme = 'dark';
   try {
     var storedLang = localStorage.getItem('academic-lang');
     var storedTheme = localStorage.getItem('academic-theme');
     if (storedLang) lang = storedLang;
     if (storedTheme) theme = storedTheme;
-    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
   } catch (e) {}
   document.documentElement.setAttribute('data-lang', lang);
   document.documentElement.setAttribute('data-theme', theme);
