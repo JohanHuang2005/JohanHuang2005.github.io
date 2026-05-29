@@ -6,28 +6,34 @@
     <div class="panel-right-glass">
       <div class="page-panels">
         <section class="page-panel is-active" data-page="home" id="page-home">
-          <div class="i18n-zh">{% include academic/news.html lang="zh" %}{% include academic/publications.html lang="zh" %}</div>
-          <div class="i18n-en" hidden>{% include academic/news.html lang="en" %}{% include academic/publications.html lang="en" %}</div>
+          <div class="page-lang-content" data-lang-content="zh">
+            {% include academic/news.html lang="zh" %}
+            {% include academic/publications.html lang="zh" %}
+          </div>
         </section>
 
         <section class="page-panel" data-page="education" id="page-education" hidden>
-          <div class="i18n-zh">{% include academic/education.html lang="zh" %}</div>
-          <div class="i18n-en" hidden>{% include academic/education.html lang="en" %}</div>
+          <div class="page-lang-content" data-lang-content="zh">
+            {% include academic/education.html lang="zh" %}
+          </div>
         </section>
 
         <section class="page-panel" data-page="experience" id="page-experience" hidden>
-          <div class="i18n-zh">{% include academic/experience.html lang="zh" %}</div>
-          <div class="i18n-en" hidden>{% include academic/experience.html lang="en" %}</div>
+          <div class="page-lang-content" data-lang-content="zh">
+            {% include academic/experience.html lang="zh" %}
+          </div>
         </section>
 
         <section class="page-panel" data-page="awards" id="page-awards" hidden>
-          <div class="i18n-zh">{% include academic/awards.html lang="zh" %}</div>
-          <div class="i18n-en" hidden>{% include academic/awards.html lang="en" %}</div>
+          <div class="page-lang-content" data-lang-content="zh">
+            {% include academic/awards.html lang="zh" %}
+          </div>
         </section>
 
         <section class="page-panel" data-page="services" id="page-services" hidden>
-          <div class="i18n-zh">{% include academic/services.html lang="zh" %}</div>
-          <div class="i18n-en" hidden>{% include academic/services.html lang="en" %}</div>
+          <div class="page-lang-content" data-lang-content="zh">
+            {% include academic/services.html lang="zh" %}
+          </div>
         </section>
       </div>
 
@@ -40,3 +46,20 @@
     </div>
   </div>
 </div>
+
+<template id="tpl-en-home">
+  {% include academic/news.html lang="en" %}
+  {% include academic/publications.html lang="en" %}
+</template>
+<template id="tpl-en-education">
+  {% include academic/education.html lang="en" %}
+</template>
+<template id="tpl-en-experience">
+  {% include academic/experience.html lang="en" %}
+</template>
+<template id="tpl-en-awards">
+  {% include academic/awards.html lang="en" %}
+</template>
+<template id="tpl-en-services">
+  {% include academic/services.html lang="en" %}
+</template>

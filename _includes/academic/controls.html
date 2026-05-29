@@ -1,10 +1,10 @@
 {% assign loc = site.data.locale %}
 <div class="academic-controls glass-chip" role="toolbar" aria-label="Display settings">
   <button type="button" id="btn-theme" class="control-btn" aria-label="Toggle theme">
-    <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
-    <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+    <svg class="theme-icon-dark" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.4 5.4 0 0 1-5.38-5.35c0-2.3 1.45-4.27 3.5-5.05A7.2 7.2 0 0 0 12 3z"/></svg>
+    <svg class="theme-icon-light" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5h1v3h-1V2zm0 19h1v3h-1v-3zM2 11h3v1H2v-1zm19 0h3v1h-3v-1zM4.2 4.9l2.1 2.1-.7.7-2.1-2.1.7-.7zm13.4 13.4 2.1 2.1-.7.7-2.1-2.1.7-.7zM4.9 19.8l2.1-2.1.7.7-2.1 2.1-.7-.7zm13.4-13.4 2.1-2.1.7.7-2.1 2.1-.7-.7z"/></svg>
   </button>
-  <button type="button" id="btn-lang" class="control-btn" aria-label="Toggle language">
+  <button type="button" id="btn-lang" class="control-btn control-btn-lang" aria-label="Toggle language">
     <span class="lang-label-zh">{{ loc.zh.lang_en }}</span>
     <span class="lang-label-en">{{ loc.en.lang_zh }}</span>
   </button>

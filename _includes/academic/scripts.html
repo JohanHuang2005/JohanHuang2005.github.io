@@ -1,27 +1,51 @@
 <script>
 (function () {
-  const STORAGE_THEME = 'academic-theme';
-  const STORAGE_LANG = 'academic-lang';
-  const bgUrls = [
+  var STORAGE_THEME = 'academic-theme';
+  var STORAGE_LANG = 'academic-lang';
+  var bgUrls = [
     {% assign bg_nums = "1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19" | split: "," %}
     {% for n in bg_nums %}
     '{{ "bg/" | append: n | strip | append: ".jpg" | relative_url }}'{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ];
 
-  const html = document.documentElement;
-  const bgEl = document.getElementById('panel-left-bg');
-  const navBtns = document.querySelectorAll('.sidebar-nav-btn');
-  const panels = document.querySelectorAll('.page-panel');
-  const btnTheme = document.getElementById('btn-theme');
-  const btnLang = document.getElementById('btn-lang');
+  var html = document.documentElement;
+  var bgEl = document.getElementById('panel-left-bg');
+  var navBtns = document.querySelectorAll('.sidebar-nav-btn');
+  var panels = document.querySelectorAll('.page-panel');
+  var btnTheme = document.getElementById('btn-theme');
+  var btnLang = document.getElementById('btn-lang');
+  var enMounted = false;
 
-  function setI18nBlocks(lang) {
-    document.querySelectorAll('.i18n-zh').forEach(function (el) {
-      el.hidden = lang !== 'zh';
+  var enTemplates = [
+    ['home', 'tpl-en-home'],
+    ['education', 'tpl-en-education'],
+    ['experience', 'tpl-en-experience'],
+    ['awards', 'tpl-en-awards'],
+    ['services', 'tpl-en-services']
+  ];
+
+  function mountEnglish() {
+    if (enMounted) return;
+    enMounted = true;
+    enTemplates.forEach(function (pair) {
+      var pageId = pair[0];
+      var tplId = pair[1];
+      var panel = document.querySelector('.page-panel[data-page="' + pageId + '"]');
+      var tpl = document.getElementById(tplId);
+      if (!panel || !tpl || !tpl.content) return;
+      var wrap = document.createElement('div');
+      wrap.className = 'page-lang-content';
+      wrap.setAttribute('data-lang-content', 'en');
+      wrap.appendChild(tpl.content.cloneNode(true));
+      panel.appendChild(wrap);
     });
-    document.querySelectorAll('.i18n-en').forEach(function (el) {
-      el.hidden = lang !== 'en';
+    syncLangBlocks(html.getAttribute('data-lang') || 'zh');
+  }
+
+  function syncLangBlocks(lang) {
+    document.querySelectorAll('[data-lang-content]').forEach(function (el) {
+      el.hidden = el.getAttribute('data-lang-content') !== lang;
     });
   }
 
@@ -33,18 +57,9 @@
   function applyLang(lang) {
     html.setAttribute('data-lang', lang);
     html.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
-    setI18nBlocks(lang);
+    if (lang === 'en') mountEnglish();
+    syncLangBlocks(lang);
     try { localStorage.setItem(STORAGE_LANG, lang); } catch (e) {}
-  }
-
-  function initTheme() {
-    var theme = html.getAttribute('data-theme') || 'light';
-    applyTheme(theme);
-  }
-
-  function initLang() {
-    var lang = html.getAttribute('data-lang') || 'zh';
-    applyLang(lang);
   }
 
   function showPage(pageId) {
@@ -78,26 +93,34 @@
 
   function initCarousel() {
     if (!bgEl || !bgUrls.length) return;
-    var idx = Math.floor(Math.random() * bgUrls.length);
-    bgEl.style.backgroundImage = 'url(' + bgUrls[idx] + ')';
+    var idx = 0;
+    bgEl.style.backgroundImage = 'url(' + bgUrls[0] + ')';
+    bgEl.style.opacity = '1';
 
-    var preload = new Image();
-    preload.src = bgUrls[(idx + 1) % bgUrls.length];
-
-    setInterval(function () {
+    function showAt(i) {
       bgEl.style.opacity = '0';
-      setTimeout(function () {
-        idx = (idx + 1) % bgUrls.length;
-        bgEl.style.backgroundImage = 'url(' + bgUrls[idx] + ')';
+      window.setTimeout(function () {
+        bgEl.style.backgroundImage = 'url(' + bgUrls[i] + ')';
         bgEl.style.opacity = '1';
-        var next = new Image();
-        next.src = bgUrls[(idx + 1) % bgUrls.length];
-      }, 1200);
+      }, 600);
+    }
+
+    window.setInterval(function () {
+      idx = (idx + 1) % bgUrls.length;
+      showAt(idx);
     }, 300000);
+
+    window.setTimeout(function () {
+      var preload = Math.min(3, bgUrls.length);
+      for (var j = 1; j < preload; j++) {
+        var img = new Image();
+        img.src = bgUrls[j];
+      }
+    }, 2000);
   }
 
-  initTheme();
-  initLang();
+  applyTheme(html.getAttribute('data-theme') || 'light');
+  applyLang(html.getAttribute('data-lang') || 'zh');
   initCarousel();
   showPage('home');
 })();
