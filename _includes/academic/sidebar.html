@@ -22,7 +22,9 @@
       {% if p.affiliation %}
       <p class="sidebar-meta subtle i18n-zh">{{ p.affiliation }}</p>
       {% endif %}
+      {% if pe.affiliation %}
       <p class="sidebar-meta subtle i18n-en">{{ pe.affiliation }}</p>
+      {% endif %}
 
       <p class="sidebar-interests">
         <span class="i18n-zh"><strong>{{ loc.zh.profile.interests }}：</strong>{% for i in p.interests %}{{ i }}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
