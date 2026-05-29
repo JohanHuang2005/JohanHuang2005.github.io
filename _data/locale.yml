@@ -1,10 +1,8 @@
 zh:
   nav:
     home: 动态·论文
-    education: 教育
+    edu: 教育·荣誉·服务
     experience: 经历
-    awards: 荣誉
-    services: 学术服务
   sections:
     news: 动态
     publications: 论文
@@ -18,6 +16,7 @@ zh:
     awards: 荣誉与奖励
     services: 学术服务
     reviewer: 审稿人
+    edu_awards_services: 教育 · 荣誉 · 学术服务
   profile:
     interests: 研究方向
   theme_light: 浅色
@@ -28,10 +27,8 @@ zh:
 en:
   nav:
     home: News & Papers
-    education: Education
+    edu: Education&Awards&Service
     experience: Experience
-    awards: Awards
-    services: Service
   sections:
     news: News
     publications: Publications
@@ -45,6 +42,7 @@ en:
     awards: Honors & Awards
     services: Academic Service
     reviewer: Reviewer
+    edu_awards_services: Education · Awards · Service
   profile:
     interests: Research Interests
   theme_light: Light

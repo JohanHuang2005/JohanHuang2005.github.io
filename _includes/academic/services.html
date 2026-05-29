@@ -8,13 +8,18 @@
 {% endif %}
 
 {% if s.reviewer.size > 0 %}
+{% if include.subsection %}
+<div class="academic-subsection">
+  <h3 class="subsection-title">{{ loc.services }}</h3>
+{% else %}
 <section class="academic-section">
   <h2 class="section-title">{{ loc.services }}</h2>
+{% endif %}
   <h3 class="subsection-title">{{ loc.reviewer }}</h3>
   <ul>
     {% for venue in s.reviewer %}
     <li>{{ venue }}</li>
     {% endfor %}
   </ul>
-</section>
+{% if include.subsection %}</div>{% else %}</section>{% endif %}
 {% endif %}

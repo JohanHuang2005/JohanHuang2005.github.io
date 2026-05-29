@@ -1,0 +1,15 @@
+{% assign lang = include.lang | default: 'zh' %}
+{% if lang == 'en' %}
+  {% assign loc = site.data.locale.en.sections %}
+{% else %}
+  {% assign loc = site.data.locale.zh.sections %}
+{% endif %}
+
+<section class="academic-section">
+  <h2 class="section-title i18n-zh">{{ loc.edu_awards_services }}</h2>
+  <h2 class="section-title i18n-en">{{ loc.edu_awards_services }}</h2>
+
+  {% include academic/education.html lang=lang subsection=true %}
+  {% include academic/awards.html lang=lang subsection=true %}
+  {% include academic/services.html lang=lang subsection=true %}
+</section>

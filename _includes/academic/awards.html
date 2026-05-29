@@ -7,11 +7,16 @@
   {% assign loc = site.data.locale.zh.sections %}
 {% endif %}
 
+{% if include.subsection %}
+<div class="academic-subsection">
+  <h3 class="subsection-title">{{ loc.awards }}</h3>
+{% else %}
 <section class="academic-section">
   <h2 class="section-title">{{ loc.awards }}</h2>
+{% endif %}
   <ul>
     {% for award in items %}
     <li>{{ award }}</li>
     {% endfor %}
   </ul>
-</section>
+{% if include.subsection %}</div>{% else %}</section>{% endif %}

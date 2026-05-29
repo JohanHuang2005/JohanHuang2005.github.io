@@ -8,7 +8,7 @@
   <div class="panel-left-inner">
     {% if site.avatar %}
     <div class="sidebar-avatar-wrap">
-      <img class="sidebar-avatar-img" src="{{ site.avatar | relative_url }}" alt="{{ p.name_zh }}" width="160" height="192" decoding="async" fetchpriority="high">
+      <img class="sidebar-avatar-img" src="{{ site.avatar | relative_url }}" alt="{{ p.name_zh }}" width="140" height="168" decoding="async" fetchpriority="high">
     </div>
     {% endif %}
 
@@ -42,26 +42,18 @@
       </div>
     </div>
 
-    <nav class="glass-panel glass-nav sidebar-nav" aria-label="Section navigation">
+    <nav class="glass-nav sidebar-nav" aria-label="Section navigation">
       <button type="button" class="sidebar-nav-btn is-active" data-page="home">
         <span class="i18n-zh">{{ loc.zh.nav.home }}</span>
         <span class="i18n-en">{{ loc.en.nav.home }}</span>
       </button>
-      <button type="button" class="sidebar-nav-btn" data-page="education">
-        <span class="i18n-zh">{{ loc.zh.nav.education }}</span>
-        <span class="i18n-en">{{ loc.en.nav.education }}</span>
+      <button type="button" class="sidebar-nav-btn" data-page="edu">
+        <span class="i18n-zh">{{ loc.zh.nav.edu }}</span>
+        <span class="i18n-en">{{ loc.en.nav.edu }}</span>
       </button>
       <button type="button" class="sidebar-nav-btn" data-page="experience">
         <span class="i18n-zh">{{ loc.zh.nav.experience }}</span>
         <span class="i18n-en">{{ loc.en.nav.experience }}</span>
-      </button>
-      <button type="button" class="sidebar-nav-btn" data-page="awards">
-        <span class="i18n-zh">{{ loc.zh.nav.awards }}</span>
-        <span class="i18n-en">{{ loc.en.nav.awards }}</span>
-      </button>
-      <button type="button" class="sidebar-nav-btn" data-page="services">
-        <span class="i18n-zh">{{ loc.zh.nav.services }}</span>
-        <span class="i18n-en">{{ loc.en.nav.services }}</span>
       </button>
     </nav>
   </div>
