@@ -1,0 +1,13 @@
+<li class="pub-card">
+  {% if include.pub.image %}
+  <div class="pub-card-media">
+    <img src="{{ include.pub.image | relative_url }}" alt="{{ include.pub.title | strip_html }}" loading="lazy">
+  </div>
+  {% endif %}
+  <div class="pub-card-body">
+    <p class="pub-title">{{ include.pub.title }}</p>
+    <p class="pub-authors">{{ include.pub.authors }}</p>
+    <p class="pub-venue"><em>{{ include.pub.venue }}</em>{% if include.pub.year %}, {{ include.pub.year }}{% endif %}</p>
+    {% include academic/pub-links.html pub=include.pub %}
+  </div>
+</li>

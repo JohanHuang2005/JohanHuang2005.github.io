@@ -1,34 +1,39 @@
-- category: conference
+- id: icme2026
+  category: conference
   status: accepted
   title: "Parameter-Efficient Subspace Decoupling ViT for Mitigating Multi-Task Negative Transfer in Histological Scoring"
-  authors: "<strong>Youhan Huang</strong>, Jiajun Li, Yilin Fang, Shuai Wang, Chuheng Li"
+  authors: "<strong>黄友涵</strong>, Jiajun Li, Yilin Fang, Shuai Wang, Chuheng Li"
   venue: "IEEE International Conference on Multimedia and Expo (ICME) 2026, Oral Presentation (CCF-B)"
   year: 2026
-  note: "共同第一作者（排名第一）"
+  image: /assets/publications/pub-icme-2026.png
   links:
     paper: "https://arxiv.org/abs/2605.29852"
     code: null
     project: null
     video: null
 
-- category: conference
+- id: eccv2026
+  category: conference
   status: under_review
   title: "基于偏振信息的多视图逆渲染透明物体三维重建"
-  authors: "<strong>黄友涵</strong>（第一作者）, 合作者"
+  authors: "<strong>黄友涵</strong>, 合作者"
   venue: "European Conference on Computer Vision (ECCV) 2026 — 投稿中"
   year: 2026
+  image: /assets/publications/pub-eccv-2026.png
   links:
     paper: null
     code: null
     project: null
     video: null
 
-- category: journal
+- id: tmc2026
+  category: journal
   status: under_review
   title: "基于椭圆柱人体建模与几何补全的多毫米波雷达协同感知外参标定"
   authors: "合作者, <strong>黄友涵</strong>, 等"
   venue: "IEEE Transactions on Mobile Computing (TMC) — 投稿中 (CCF-A)"
   year: 2026
+  image: /assets/publications/pub-tmc-2026.png
   links:
     paper: null
     code: null

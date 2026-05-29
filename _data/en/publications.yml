@@ -1,34 +1,39 @@
-- category: conference
+- id: icme2026
+  category: conference
   status: accepted
   title: "Parameter-Efficient Subspace Decoupling ViT for Mitigating Multi-Task Negative Transfer in Histological Scoring"
   authors: "<strong>Youhan Huang</strong>, Jiajun Li, Yilin Fang, Shuai Wang, Chuheng Li"
   venue: "IEEE ICME 2026, Oral Presentation (CCF-B)"
   year: 2026
-  note: "Co-first author (rank 1)"
+  image: /assets/publications/pub-icme-2026.png
   links:
     paper: "https://arxiv.org/abs/2605.29852"
     code: null
     project: null
     video: null
 
-- category: conference
+- id: eccv2026
+  category: conference
   status: under_review
   title: "Polarization-assisted Multi-view Inverse Rendering for Transparent Object 3D Reconstruction"
-  authors: "<strong>Youhan Huang</strong> (first author), collaborators"
+  authors: "<strong>Youhan Huang</strong>, collaborators"
   venue: "ECCV 2026 — Under Review"
   year: 2026
+  image: /assets/publications/pub-eccv-2026.png
   links:
     paper: null
     code: null
     project: null
     video: null
 
-- category: journal
+- id: tmc2026
+  category: journal
   status: under_review
   title: "Consistent Trajectory Calibration for Multi-mmWave Radar via Elliptic Cylinder Human Modeling"
   authors: "Collaborators, <strong>Youhan Huang</strong>, et al."
   venue: "IEEE TMC — Under Review (CCF-A)"
   year: 2026
+  image: /assets/publications/pub-tmc-2026.png
   links:
     paper: null
     code: null

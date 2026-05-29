@@ -15,31 +15,19 @@
 
   {% if accepted.size > 0 %}
   <h3 class="subsection-title">{{ loc.pub_accepted }}</h3>
-  <ol class="pub-list">
+  <ul class="pub-list">
     {% for pub in accepted %}
-    <li class="pub-item">
-      <p class="pub-title">{{ pub.title }}</p>
-      <p class="pub-authors">{{ pub.authors }}</p>
-      {% if pub.note %}<p class="pub-note">{{ pub.note }}</p>{% endif %}
-      <p class="pub-venue"><em>{{ pub.venue }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}</p>
-      {% include academic/pub-links.html pub=pub %}
-    </li>
+      {% include academic/pub-card.html pub=pub %}
     {% endfor %}
-  </ol>
+  </ul>
   {% endif %}
 
   {% if under_review.size > 0 %}
   <h3 class="subsection-title">{{ loc.pub_review }}</h3>
-  <ol class="pub-list">
+  <ul class="pub-list">
     {% for pub in under_review %}
-    <li class="pub-item">
-      <p class="pub-title">{{ pub.title }}</p>
-      <p class="pub-authors">{{ pub.authors }}</p>
-      {% if pub.note %}<p class="pub-note">{{ pub.note }}</p>{% endif %}
-      <p class="pub-venue"><em>{{ pub.venue }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}</p>
-      {% include academic/pub-links.html pub=pub %}
-    </li>
+      {% include academic/pub-card.html pub=pub %}
     {% endfor %}
-  </ol>
+  </ul>
   {% endif %}
 </section>
