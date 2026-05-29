@@ -47,9 +47,11 @@
   {% endfor %}
 
   <h3 class="subsection-title">{{ loc.skills }}</h3>
-  <ul class="skills-list">
-    <li><strong>{% if lang == 'en' %}Programming{% else %}编程{% endif %}：</strong>{{ skills.programming }}</li>
-    <li><strong>{% if lang == 'en' %}Tools{% else %}框架/工具{% endif %}：</strong>{{ skills.tools }}</li>
-    <li><strong>{% if lang == 'en' %}English{% else %}英语{% endif %}：</strong>{{ skills.english }}</li>
-  </ul>
+  <div class="exp-item skills-block">
+    <ul class="skills-list">
+      <li><strong>{% if lang == 'en' %}Programming{% else %}编程{% endif %}：</strong>{{ skills.programming }}</li>
+      <li><strong>{% if lang == 'en' %}Tools{% else %}框架/工具{% endif %}：</strong>{{ skills.tools }}</li>
+      <li><strong>{% if lang == 'en' %}English{% else %}英语{% endif %}：</strong>{{ skills.english }}</li>
+    </ul>
+  </div>
 </section>
