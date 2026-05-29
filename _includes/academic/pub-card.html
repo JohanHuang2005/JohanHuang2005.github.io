@@ -1,7 +1,7 @@
 <li class="pub-card">
   {% if include.pub.image %}
   <div class="pub-card-media">
-    <img src="{{ include.pub.image | relative_url }}" alt="{{ include.pub.title | strip_html }}" loading="lazy">
+    <img src="{{ include.pub.image | relative_url }}" alt="{{ include.pub.title | strip_html }}" loading="lazy" decoding="async" width="152" height="114">
   </div>
   {% endif %}
   <div class="pub-card-body">

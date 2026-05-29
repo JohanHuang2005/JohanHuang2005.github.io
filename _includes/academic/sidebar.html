@@ -20,7 +20,9 @@
       <p class="sidebar-meta i18n-zh">{{ p.title }}</p>
       <p class="sidebar-meta i18n-en">{{ pe.title }}</p>
 
+      {% if p.affiliation %}
       <p class="sidebar-meta subtle i18n-zh">{{ p.affiliation }}</p>
+      {% endif %}
       <p class="sidebar-meta subtle i18n-en">{{ pe.affiliation }}</p>
 
       <p class="sidebar-interests">

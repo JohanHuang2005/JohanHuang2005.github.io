@@ -1,6 +1,21 @@
-{% comment %}
-  Placeholder to allow defining custom head, in principle, you can add anything here, e.g. favicons:
-
-  1. Head over to https://realfavicongenerator.net/ to add your own favicons.
-  2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
-{% endcomment %}
+<style id="academic-critical">
+  html[data-lang="zh"] .i18n-en,
+  html[data-lang="en"] .i18n-zh { display: none !important; }
+  .page-panel:not(.is-active) { display: none !important; }
+  .i18n-en { display: none; }
+</style>
+<script>
+(function () {
+  var lang = 'zh', theme = 'light';
+  try {
+    var storedLang = localStorage.getItem('academic-lang');
+    var storedTheme = localStorage.getItem('academic-theme');
+    if (storedLang) lang = storedLang;
+    if (storedTheme) theme = storedTheme;
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+  } catch (e) {}
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+})();
+</script>
