@@ -11,9 +11,9 @@
   --text-on-bg: rgba(255, 255, 255, 0.96);
   --link: #0071e3;
   --accent: rgba(0, 122, 255, 0.2);
-  --glass-sidebar: rgba(255, 255, 255, 0.045);
-  --glass-sidebar-border: rgba(255, 255, 255, 0.1);
-  --blur-sidebar: blur(24px) saturate(180%);
+  --glass-sidebar: rgba(255, 255, 255, 0.022);
+  --glass-sidebar-border: rgba(255, 255, 255, 0.08);
+  --blur-sidebar: blur(18px) saturate(160%);
   --body-bg: #e8e8ed;
   --blur: blur(48px) saturate(220%);
 }
@@ -31,8 +31,8 @@ html[data-theme="dark"] {
   --body-color: #e8e8ed;
   --link: #64b5ff;
   --accent: rgba(10, 132, 255, 0.28);
-  --glass-sidebar: rgba(44, 44, 48, 0.07);
-  --glass-sidebar-border: rgba(255, 255, 255, 0.05);
+  --glass-sidebar: rgba(44, 44, 48, 0.035);
+  --glass-sidebar-border: rgba(255, 255, 255, 0.06);
   --body-bg: #000000;
 }
 
@@ -115,23 +115,35 @@ html[data-lang="en"] [data-lang-content="en"] {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: stretch;
-  padding: 0.65rem 0.75rem 0.7rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
   box-sizing: border-box;
   overflow: hidden;
 }
 
 .sidebar-glass {
-  flex: 1;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  min-height: 0;
-  padding: 0.65rem 0.55rem 0.5rem;
+  align-items: center;
+  text-align: center;
+  padding: 0.75rem 0.65rem 0.65rem;
   border-radius: 1.15rem;
   backdrop-filter: var(--blur-sidebar);
   -webkit-backdrop-filter: var(--blur-sidebar);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-on-bg) !important;
+  }
+}
+
+.sidebar-glass.glass-panel {
+  backdrop-filter: var(--blur-sidebar);
+  -webkit-backdrop-filter: var(--blur-sidebar);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), var(--glass-inset);
 }
 
 .sidebar-avatar-wrap {
@@ -169,7 +181,7 @@ html[data-lang="en"] [data-lang-content="en"] {
   width: 100%;
   flex: 0 0 auto;
   overflow: visible;
-  padding: 0.35rem 0.4rem 0;
+  padding: 0.25rem 0.5rem 0;
   text-align: center;
 }
 
@@ -179,10 +191,11 @@ html[data-theme="dark"] .glass-panel {
 }
 
 .sidebar-name {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  margin: 0 0 0.08rem;
+  margin: 0 0 0.15rem;
   letter-spacing: -0.02em;
+  color: var(--text-on-bg) !important;
 }
 
 .sidebar-name-en {
@@ -192,31 +205,35 @@ html[data-theme="dark"] .glass-panel {
 }
 
 .sidebar-meta {
-  font-size: 0.88rem;
-  margin: 0.12rem 0;
-  line-height: 1.4;
+  font-size: 0.98rem;
+  margin: 0.15rem 0;
+  line-height: 1.45;
   padding: 0;
+  color: var(--text-on-bg);
 
   &.subtle {
-    font-size: 0.84rem;
+    font-size: 0.94rem;
     opacity: 0.92;
   }
 }
 
 .sidebar-interests {
-  font-size: 0.84rem;
-  margin: 0.35rem 0 0;
-  line-height: 1.4;
-  opacity: 0.9;
+  font-size: 0.94rem;
+  margin: 0.4rem 0 0;
+  line-height: 1.45;
+  opacity: 0.92;
+  color: var(--text-on-bg);
 }
 
 .sidebar-links {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 0.55rem;
-  margin: 0.45rem 0 0.35rem;
+  gap: 0.75rem;
+  margin: 0.5rem 0 0.4rem;
   flex: 0 0 auto;
+  width: 100%;
 
   .icon-link {
     display: flex;
@@ -241,11 +258,12 @@ html[data-theme="dark"] .glass-panel {
 .sidebar-nav {
   width: 100%;
   flex: 0 0 auto;
-  margin-top: auto;
-  padding: 0.35rem 0 0;
+  margin-top: 0;
+  padding: 0.25rem 0 0;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  align-items: center;
+  gap: 0.25rem;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -255,32 +273,41 @@ html[data-theme="dark"] .glass-panel {
   appearance: none;
   border: none;
   background: transparent;
-  color: var(--text-on-bg);
+  color: var(--text-on-bg) !important;
   font: inherit;
-  font-size: 0.8rem;
-  padding: 0.48rem 0.55rem;
+  font-size: 0.92rem;
+  padding: 0.5rem 0.65rem;
   border-radius: 0.5rem;
   cursor: pointer;
   text-align: center;
+  width: 100%;
+  max-width: 16rem;
   transition: background 0.2s;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.1);
   }
 
   &.is-active {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.16);
     font-weight: 600;
   }
 }
 
+html[data-theme="dark"] .sidebar-glass {
+  h1, h2, h3, h4, h5, h6,
+  .sidebar-meta,
+  .sidebar-interests,
+  .sidebar-nav-btn {
+    color: var(--text-on-bg) !important;
+  }
+}
+
 html[data-theme="dark"] .sidebar-nav-btn {
-  color: var(--text);
-  border-color: var(--glass-border);
   background: rgba(255, 255, 255, 0.04);
 
   &.is-active {
-    background: var(--accent);
+    background: rgba(255, 255, 255, 0.14);
   }
 }
 
@@ -621,16 +648,12 @@ html[data-lang="en"] .edu-awards-services-page > .section-title.i18n-en {
   .panel-left-inner {
     height: auto;
     min-height: 20rem;
-    justify-content: space-between;
+    justify-content: center;
     padding-bottom: 1rem;
   }
 
   .sidebar-profile {
     overflow-y: visible;
-  }
-
-  .sidebar-glass {
-    min-height: 18rem;
   }
 
   .sidebar-avatar-img {
