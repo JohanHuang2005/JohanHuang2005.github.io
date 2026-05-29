@@ -40,8 +40,14 @@ html[data-lang="en"] .i18n-zh {
   display: none !important;
 }
 
-[data-lang-content][hidden] {
+html[data-lang="zh"] [data-lang-content="en"],
+html[data-lang="en"] [data-lang-content="zh"] {
   display: none !important;
+}
+
+html[data-lang="zh"] [data-lang-content="zh"],
+html[data-lang="en"] [data-lang-content="en"] {
+  display: block !important;
 }
 
 @mixin glass-surface($bg: var(--glass-bg)) {
@@ -54,7 +60,8 @@ html[data-lang="en"] .i18n-zh {
 
 .academic-body {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background: var(--body-bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Noto Sans SC", sans-serif;
@@ -65,18 +72,20 @@ html[data-lang="en"] .i18n-zh {
 
 .academic-shell {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
-// —— Left: visible carousel + floating glass ——
+// —— Left: fixed, no scroll ——
 .panel-left {
   position: relative;
   flex: 0 0 38%;
   min-width: 18rem;
   max-width: 28rem;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .panel-left-bg {
@@ -104,21 +113,25 @@ html[data-lang="en"] .i18n-zh {
 .panel-left-inner {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1.5rem 1.1rem 1.75rem;
+  justify-content: space-between;
+  gap: 0.65rem;
+  padding: 1rem 1rem 1.1rem;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .glass-profile {
   @include glass-surface(rgba(255, 255, 255, 0.14));
   width: 100%;
   max-width: 15.5rem;
-  padding: 1.35rem 1.1rem 1.1rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1rem 0.95rem 0.85rem;
   border-radius: 1.35rem;
   text-align: center;
   color: var(--text-on-bg);
@@ -142,8 +155,8 @@ html[data-theme="dark"] .glass-profile {
 }
 
 .sidebar-avatar img {
-  width: 8.75rem;
-  height: 10.5rem;
+  width: 7.5rem;
+  height: 9rem;
   max-width: 100%;
   object-fit: contain;
   object-position: center center;
@@ -215,11 +228,12 @@ html[data-theme="dark"] .glass-profile {
   @include glass-surface(rgba(255, 255, 255, 0.1));
   width: 100%;
   max-width: 15.5rem;
-  padding: 0.55rem;
+  flex: 0 0 auto;
+  padding: 0.5rem;
   border-radius: 1.1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.3rem;
 }
 
 html[data-theme="dark"] .glass-nav {
@@ -261,11 +275,12 @@ html[data-theme="dark"] .sidebar-nav-btn {
   }
 }
 
-// —— Right panel ——
+// —— Right panel: scrollable ——
 .panel-right {
   flex: 1;
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  min-width: 0;
   overflow: hidden;
 }
 
@@ -283,13 +298,15 @@ html[data-theme="dark"] .sidebar-nav-btn {
 .panel-right-glass {
   position: relative;
   z-index: 1;
-  margin: 1rem 1rem 1rem 0.25rem;
-  padding: 1.35rem 1.5rem 1rem;
-  min-height: calc(100vh - 2rem);
+  margin: 0.75rem 0.75rem 0.75rem 0.25rem;
+  padding: 1.25rem 1.4rem 1rem;
+  height: calc(100vh - 1.5rem);
   box-sizing: border-box;
   @include glass-surface(var(--glass-bg-strong));
   border-radius: 1.35rem;
+  overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   color: var(--text);
 }
 
@@ -520,22 +537,43 @@ html[data-theme="dark"] .exp-item {
   }
 }
 
+html[data-lang="zh"] [data-lang-content="en"] .pub-card-media img {
+  content-visibility: hidden;
+}
+
 @media (max-width: 52rem) {
+  .academic-body {
+    height: auto;
+    overflow: auto;
+  }
+
   .academic-shell {
     flex-direction: column;
+    height: auto;
+    overflow: visible;
   }
 
   .panel-left {
     flex: none;
     max-width: none;
-    min-height: 22rem;
+    height: auto;
+    min-height: 20rem;
     width: 100%;
   }
 
   .panel-left-inner {
-    min-height: 22rem;
-    justify-content: flex-end;
-    padding-bottom: 1.25rem;
+    height: auto;
+    min-height: 20rem;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+  }
+
+  .glass-profile {
+    overflow: visible;
+  }
+
+  .panel-right {
+    height: auto;
   }
 
   .panel-right-fade {
@@ -543,8 +581,8 @@ html[data-theme="dark"] .exp-item {
   }
 
   .panel-right-glass {
-    margin: 0 0.85rem 0.85rem;
-    min-height: auto;
+    margin: 0 0.75rem 0.75rem;
+    height: auto;
   }
 
   .academic-controls {

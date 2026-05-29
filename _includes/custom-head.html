@@ -1,8 +1,11 @@
 <style id="academic-critical">
   html[data-lang="zh"] .i18n-en,
   html[data-lang="en"] .i18n-zh { display: none !important; }
+  html[data-lang="zh"] [data-lang-content="en"],
+  html[data-lang="en"] [data-lang-content="zh"] { display: none !important; }
+  html[data-lang="zh"] [data-lang-content="zh"],
+  html[data-lang="en"] [data-lang-content="en"] { display: block !important; }
   .page-panel:not(.is-active) { display: none !important; }
-  [data-lang-content][hidden] { display: none !important; }
 </style>
 <script>
 (function () {

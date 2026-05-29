@@ -10,11 +10,18 @@
             {% include academic/news.html lang="zh" %}
             {% include academic/publications.html lang="zh" %}
           </div>
+          <div class="page-lang-content" data-lang-content="en">
+            {% include academic/news.html lang="en" %}
+            {% include academic/publications.html lang="en" %}
+          </div>
         </section>
 
         <section class="page-panel" data-page="education" id="page-education" hidden>
           <div class="page-lang-content" data-lang-content="zh">
             {% include academic/education.html lang="zh" %}
+          </div>
+          <div class="page-lang-content" data-lang-content="en">
+            {% include academic/education.html lang="en" %}
           </div>
         </section>
 
@@ -22,17 +29,26 @@
           <div class="page-lang-content" data-lang-content="zh">
             {% include academic/experience.html lang="zh" %}
           </div>
+          <div class="page-lang-content" data-lang-content="en">
+            {% include academic/experience.html lang="en" %}
+          </div>
         </section>
 
         <section class="page-panel" data-page="awards" id="page-awards" hidden>
           <div class="page-lang-content" data-lang-content="zh">
             {% include academic/awards.html lang="zh" %}
           </div>
+          <div class="page-lang-content" data-lang-content="en">
+            {% include academic/awards.html lang="en" %}
+          </div>
         </section>
 
         <section class="page-panel" data-page="services" id="page-services" hidden>
           <div class="page-lang-content" data-lang-content="zh">
             {% include academic/services.html lang="zh" %}
+          </div>
+          <div class="page-lang-content" data-lang-content="en">
+            {% include academic/services.html lang="en" %}
           </div>
         </section>
       </div>
@@ -46,20 +62,3 @@
     </div>
   </div>
 </div>
-
-<template id="tpl-en-home">
-  {% include academic/news.html lang="en" %}
-  {% include academic/publications.html lang="en" %}
-</template>
-<template id="tpl-en-education">
-  {% include academic/education.html lang="en" %}
-</template>
-<template id="tpl-en-experience">
-  {% include academic/experience.html lang="en" %}
-</template>
-<template id="tpl-en-awards">
-  {% include academic/awards.html lang="en" %}
-</template>
-<template id="tpl-en-services">
-  {% include academic/services.html lang="en" %}
-</template>

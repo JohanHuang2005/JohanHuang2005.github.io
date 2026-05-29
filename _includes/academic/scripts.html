@@ -15,39 +15,6 @@
   var panels = document.querySelectorAll('.page-panel');
   var btnTheme = document.getElementById('btn-theme');
   var btnLang = document.getElementById('btn-lang');
-  var enMounted = false;
-
-  var enTemplates = [
-    ['home', 'tpl-en-home'],
-    ['education', 'tpl-en-education'],
-    ['experience', 'tpl-en-experience'],
-    ['awards', 'tpl-en-awards'],
-    ['services', 'tpl-en-services']
-  ];
-
-  function mountEnglish() {
-    if (enMounted) return;
-    enMounted = true;
-    enTemplates.forEach(function (pair) {
-      var pageId = pair[0];
-      var tplId = pair[1];
-      var panel = document.querySelector('.page-panel[data-page="' + pageId + '"]');
-      var tpl = document.getElementById(tplId);
-      if (!panel || !tpl || !tpl.content) return;
-      var wrap = document.createElement('div');
-      wrap.className = 'page-lang-content';
-      wrap.setAttribute('data-lang-content', 'en');
-      wrap.appendChild(tpl.content.cloneNode(true));
-      panel.appendChild(wrap);
-    });
-    syncLangBlocks(html.getAttribute('data-lang') || 'zh');
-  }
-
-  function syncLangBlocks(lang) {
-    document.querySelectorAll('[data-lang-content]').forEach(function (el) {
-      el.hidden = el.getAttribute('data-lang-content') !== lang;
-    });
-  }
 
   function applyTheme(theme) {
     html.setAttribute('data-theme', theme);
@@ -57,8 +24,6 @@
   function applyLang(lang) {
     html.setAttribute('data-lang', lang);
     html.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
-    if (lang === 'en') mountEnglish();
-    syncLangBlocks(lang);
     try { localStorage.setItem(STORAGE_LANG, lang); } catch (e) {}
   }
 
@@ -97,22 +62,17 @@
     bgEl.style.backgroundImage = 'url(' + bgUrls[0] + ')';
     bgEl.style.opacity = '1';
 
-    function showAt(i) {
-      bgEl.style.opacity = '0';
-      window.setTimeout(function () {
-        bgEl.style.backgroundImage = 'url(' + bgUrls[i] + ')';
-        bgEl.style.opacity = '1';
-      }, 600);
-    }
-
     window.setInterval(function () {
       idx = (idx + 1) % bgUrls.length;
-      showAt(idx);
+      bgEl.style.opacity = '0';
+      window.setTimeout(function () {
+        bgEl.style.backgroundImage = 'url(' + bgUrls[idx] + ')';
+        bgEl.style.opacity = '1';
+      }, 600);
     }, 300000);
 
     window.setTimeout(function () {
-      var preload = Math.min(3, bgUrls.length);
-      for (var j = 1; j < preload; j++) {
+      for (var j = 1; j < Math.min(3, bgUrls.length); j++) {
         var img = new Image();
         img.src = bgUrls[j];
       }
