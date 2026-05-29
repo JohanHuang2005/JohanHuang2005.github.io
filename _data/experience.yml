@@ -16,7 +16,7 @@ research:
     role: 项目负责人
     period: 2025 年 10 月 – 2026 年 1 月
     bullets:
-      - "面向小鼠 NAFLD 病理评分中脂肪变性、炎症与气球样变性三任务联合评估需求，主导构建并开源多任务病理评分数据集；提出基于 Multi-task ViT 的联合建模方案，引入 task-specific Adapter/LoRA 缓解任务间负迁移，并完成实验设计、模型实现与结果分析；参与论文撰写；共同第一作者（排名第一）论文已被 ICME 2026 (CCF-B) 接收为 Oral（arXiv: 2605.29852）。"
+      - "面向小鼠 NAFLD 病理评分中脂肪变性、炎症与气球样变性三任务联合评估需求，主导构建并开源多任务病理评分数据集；提出基于 Multi-task ViT 的联合建模方案，引入 task-specific Adapter/LoRA 缓解任务间负迁移，并完成实验设计、模型实现与结果分析；参与论文撰写；共同第一作者（排名第一）论文已被 ICME 2026 (CCF-B) 接收为 Oral（[arXiv:2605.29852](https://arxiv.org/abs/2605.29852)）。"
 
   - org: 北京邮电大学计算机学院 · 图像美学评估团队
     role: 科研实习生
@@ -32,10 +32,13 @@ projects:
     links:
       code: "https://github.com/JohanHuang2005/LidarCar"
 
-  - title: "国际学院助教招募系统（Java）"
-    role: 团队负责人
+  - title: "国际学院助教招募系统（Java）— EBU6304 软件工程课程项目"
+    role: 团队负责人（Group 77）
     bullets:
-      - "面向课程组织者、授课教师与研究生助教设计并开发 TA 招募系统；负责需求分析、迭代规划、系统架构与核心功能实现，基于 Agile 与 GitHub 协作推进职位发布、申请管理、状态跟踪与结果通知等核心流程。"
+      - "面向课程组织者、授课教师与研究生助教设计并开发 TA Recruitment System；负责需求分析、迭代规划、系统架构与核心功能实现，基于 Agile 与 GitHub 协作推进职位发布、申请管理、状态跟踪与结果通知等核心流程（JDK 17 + Tomcat 10 + Maven）。"
+    links:
+      code: "https://github.com/JohanHuang2005/SE_Coursework"
+      label: "GitHub"
 
   - title: "儿童图形化数学学习应用（Java）"
     role: 组织开发

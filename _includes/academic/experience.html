@@ -10,7 +10,7 @@
     </p>
     <ul>
       {% for bullet in item.bullets %}
-      <li>{{ bullet }}</li>
+      <li>{{ bullet | markdownify }}</li>
       {% endfor %}
     </ul>
   </div>
@@ -24,11 +24,13 @@
     </p>
     <ul>
       {% for bullet in item.bullets %}
-      <li>{{ bullet }}</li>
+      <li>{{ bullet | markdownify }}</li>
       {% endfor %}
     </ul>
     {% if item.links.code %}
-    <p class="exp-links"><a href="{{ item.links.code }}" target="_blank" rel="noopener">[Code]</a></p>
+    <p class="exp-links">
+      <a href="{{ item.links.code }}" target="_blank" rel="noopener">{% if item.links.label %}[{{ item.links.label }}]{% else %}[Code]{% endif %}</a>
+    </p>
     {% endif %}
   </div>
   {% endfor %}

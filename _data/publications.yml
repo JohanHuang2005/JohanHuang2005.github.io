@@ -1,9 +1,10 @@
 - category: conference
   status: accepted
-  title: "面向小鼠 NAFLD 多任务病理评分的 Multi-task ViT 联合建模方法"
-  authors: "<strong>黄友涵</strong>*（共同第一作者，排名第一）, 合作者"
+  title: "Parameter-Efficient Subspace Decoupling ViT for Mitigating Multi-Task Negative Transfer in Histological Scoring"
+  authors: "<strong>Youhan Huang</strong>, Jiajun Li, Yilin Fang, Shuai Wang, Chuheng Li"
   venue: "IEEE International Conference on Multimedia and Expo (ICME) 2026, Oral Presentation (CCF-B)"
   year: 2026
+  note: "共同第一作者（排名第一）"
   links:
     paper: "https://arxiv.org/abs/2605.29852"
     code: null
