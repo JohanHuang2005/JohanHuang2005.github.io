@@ -1,0 +1,42 @@
+<div class="academic-shell">
+  {% include academic/sidebar.html %}
+
+  <div class="panel-right">
+    <div class="panel-right-fade" aria-hidden="true"></div>
+    <div class="panel-right-glass">
+      <div class="page-panels">
+        <section class="page-panel is-active" data-page="home" id="page-home">
+          <div class="i18n-zh">{% include academic/news.html lang="zh" %}{% include academic/publications.html lang="zh" %}</div>
+          <div class="i18n-en">{% include academic/news.html lang="en" %}{% include academic/publications.html lang="en" %}</div>
+        </section>
+
+        <section class="page-panel" data-page="education" id="page-education" hidden>
+          <div class="i18n-zh">{% include academic/education.html lang="zh" %}</div>
+          <div class="i18n-en">{% include academic/education.html lang="en" %}</div>
+        </section>
+
+        <section class="page-panel" data-page="experience" id="page-experience" hidden>
+          <div class="i18n-zh">{% include academic/experience.html lang="zh" %}</div>
+          <div class="i18n-en">{% include academic/experience.html lang="en" %}</div>
+        </section>
+
+        <section class="page-panel" data-page="awards" id="page-awards" hidden>
+          <div class="i18n-zh">{% include academic/awards.html lang="zh" %}</div>
+          <div class="i18n-en">{% include academic/awards.html lang="en" %}</div>
+        </section>
+
+        <section class="page-panel" data-page="services" id="page-services" hidden>
+          <div class="i18n-zh">{% include academic/services.html lang="zh" %}</div>
+          <div class="i18n-en">{% include academic/services.html lang="en" %}</div>
+        </section>
+      </div>
+
+      <footer class="academic-footer">
+        <small>
+          &copy; {{ site.time | date: '%Y' }}
+          {% if site.author %}<a href="{{ site.author.url }}">{{ site.author.name }}</a>{% endif %}.
+        </small>
+      </footer>
+    </div>
+  </div>
+</div>

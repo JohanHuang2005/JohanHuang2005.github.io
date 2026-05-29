@@ -1,7 +1,16 @@
-<section id="news" class="academic-section">
-  <h2 class="section-title">动态</h2>
+{% assign lang = include.lang | default: 'zh' %}
+{% if lang == 'en' %}
+  {% assign items = site.data.en.news %}
+  {% assign loc = site.data.locale.en.sections %}
+{% else %}
+  {% assign items = site.data.news %}
+  {% assign loc = site.data.locale.zh.sections %}
+{% endif %}
+
+<section class="academic-section">
+  <h2 class="section-title">{{ loc.news }}</h2>
   <ul class="news-list">
-    {% for item in site.data.news %}
+    {% for item in items %}
     <li>
       <span class="news-date">[{{ item.date }}]</span>
       {{ item.text | markdownify }}

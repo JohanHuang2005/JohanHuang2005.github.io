@@ -1,8 +1,19 @@
-<section id="experience" class="academic-section">
-  <h2 class="section-title">科研与项目经历</h2>
+{% assign lang = include.lang | default: 'zh' %}
+{% if lang == 'en' %}
+  {% assign exp = site.data.en.experience %}
+  {% assign skills = site.data.en.skills %}
+  {% assign loc = site.data.locale.en.sections %}
+{% else %}
+  {% assign exp = site.data.experience %}
+  {% assign skills = site.data.skills %}
+  {% assign loc = site.data.locale.zh.sections %}
+{% endif %}
 
-  <h3 class="subsection-title">科研经历</h3>
-  {% for item in site.data.experience.research %}
+<section class="academic-section">
+  <h2 class="section-title">{{ loc.experience }}</h2>
+
+  <h3 class="subsection-title">{{ loc.research }}</h3>
+  {% for item in exp.research %}
   <div class="exp-item">
     <p class="exp-header">
       <strong>{{ item.org }}</strong> — {{ item.role }}
@@ -16,8 +27,8 @@
   </div>
   {% endfor %}
 
-  <h3 class="subsection-title">项目经历</h3>
-  {% for item in site.data.experience.projects %}
+  <h3 class="subsection-title">{{ loc.projects }}</h3>
+  {% for item in exp.projects %}
   <div class="exp-item">
     <p class="exp-header">
       <strong>{{ item.title }}</strong> — {{ item.role }}
@@ -35,13 +46,10 @@
   </div>
   {% endfor %}
 
-  {% assign skills = site.data.skills %}
-  {% if skills %}
-  <h3 class="subsection-title">技能</h3>
+  <h3 class="subsection-title">{{ loc.skills }}</h3>
   <ul class="skills-list">
-    <li><strong>编程：</strong>{{ skills.programming }}</li>
-    <li><strong>框架/工具：</strong>{{ skills.tools }}</li>
-    <li><strong>英语：</strong>{{ skills.english }}</li>
+    <li><strong>{% if lang == 'en' %}Programming{% else %}编程{% endif %}：</strong>{{ skills.programming }}</li>
+    <li><strong>{% if lang == 'en' %}Tools{% else %}框架/工具{% endif %}：</strong>{{ skills.tools }}</li>
+    <li><strong>{% if lang == 'en' %}English{% else %}英语{% endif %}：</strong>{{ skills.english }}</li>
   </ul>
-  {% endif %}
 </section>

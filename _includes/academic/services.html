@@ -1,8 +1,16 @@
-{% assign s = site.data.services %}
+{% assign lang = include.lang | default: 'zh' %}
+{% if lang == 'en' %}
+  {% assign s = site.data.en.services %}
+  {% assign loc = site.data.locale.en.sections %}
+{% else %}
+  {% assign s = site.data.services %}
+  {% assign loc = site.data.locale.zh.sections %}
+{% endif %}
+
 {% if s.reviewer.size > 0 %}
-<section id="services" class="academic-section">
-  <h2 class="section-title">学术服务</h2>
-  <h3 class="subsection-title">审稿人</h3>
+<section class="academic-section">
+  <h2 class="section-title">{{ loc.services }}</h2>
+  <h3 class="subsection-title">{{ loc.reviewer }}</h3>
   <ul>
     {% for venue in s.reviewer %}
     <li>{{ venue }}</li>

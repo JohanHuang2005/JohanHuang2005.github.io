@@ -1,0 +1,51 @@
+research:
+  - org: Peking University · Wireless Sensing Group
+    role: Research Intern
+    period: Aug 2024 – Sep 2025
+    bullets:
+      - "Worked on high-precision extrinsic calibration for cooperative multi-mmWave radar sensing; helped build elliptic-cylinder human modeling with geometric completion for trajectory-consistent calibration and pitch self-calibration; paper submitted to IEEE TMC (CCF-A)."
+      - "Neural mmWave point-cloud indoor object classification (human/dog/fan) with 97%+ accuracy."
+
+  - org: BUPT · PRI Vision Lab
+    role: Research Intern
+    period: Apr 2025 – Mar 2026
+    bullets:
+      - "Polarization-assisted multi-view inverse rendering for transparent 3D reconstruction; first-author paper submitted to ECCV 2026."
+
+  - org: BUPT · Mouse NAFLD Multi-task Scoring
+    role: Project Lead
+    period: Oct 2025 – Jan 2026
+    bullets:
+      - "Led dataset construction and Multi-task ViT with task-specific Adapter/LoRA; co-first author (rank 1) paper accepted at ICME 2026 Oral ([arXiv:2605.29852](https://arxiv.org/abs/2605.29852))."
+
+  - org: BUPT · Image Aesthetics Assessment Team
+    role: Research Intern
+    period: Nov 2025 – Jan 2026
+    bullets:
+      - "Long-video aesthetic assessment: experiment reproduction, metrics, and paper writing support."
+
+projects:
+  - title: "LidarCar: Maze Navigation & SLAM Robot (C)"
+    role: Team Lead
+    bullets:
+      - "2D LiDAR mobile robot integration, STM32 debugging, Bluetooth comms; maze exploration and homing."
+    links:
+      code: "https://github.com/JohanHuang2005/LidarCar"
+
+  - title: "TA Recruitment System (Java) — EBU6304"
+    role: Team Lead (Group 77)
+    bullets:
+      - "TA recruitment system with Agile/GitHub workflow (JDK 17, Tomcat 10, Maven)."
+    links:
+      code: "https://github.com/JohanHuang2005/SE_Coursework"
+      label: "GitHub"
+
+  - title: "Graphical Math Learning App (Java)"
+    role: Organizer
+    bullets:
+      - "Modular math learning app for children with progress tracking and gamification."
+
+  - title: "Multimedia Learning Web (HTML/CSS/JS)"
+    role: Team Lead
+    bullets:
+      - "Interactive multimedia fundamentals learning website with responsive UI."

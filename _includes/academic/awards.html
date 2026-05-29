@@ -1,7 +1,16 @@
-<section id="awards" class="academic-section">
-  <h2 class="section-title">荣誉与奖励</h2>
+{% assign lang = include.lang | default: 'zh' %}
+{% if lang == 'en' %}
+  {% assign items = site.data.en.awards %}
+  {% assign loc = site.data.locale.en.sections %}
+{% else %}
+  {% assign items = site.data.awards %}
+  {% assign loc = site.data.locale.zh.sections %}
+{% endif %}
+
+<section class="academic-section">
+  <h2 class="section-title">{{ loc.awards }}</h2>
   <ul>
-    {% for award in site.data.awards %}
+    {% for award in items %}
     <li>{{ award }}</li>
     {% endfor %}
   </ul>

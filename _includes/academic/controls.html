@@ -1,0 +1,11 @@
+{% assign loc = site.data.locale %}
+<div class="academic-controls glass-chip" role="toolbar" aria-label="Display settings">
+  <button type="button" id="btn-theme" class="control-btn" aria-label="Toggle theme">
+    <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+    <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+  </button>
+  <button type="button" id="btn-lang" class="control-btn" aria-label="Toggle language">
+    <span class="lang-label-zh">{{ loc.zh.lang_en }}</span>
+    <span class="lang-label-en">{{ loc.en.lang_zh }}</span>
+  </button>
+</div>

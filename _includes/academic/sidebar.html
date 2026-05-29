@@ -1,0 +1,61 @@
+{% assign p = site.data.profile %}
+{% assign pe = site.data.en.profile %}
+{% assign loc = site.data.locale %}
+
+<aside class="panel-left" id="panel-left">
+  <div class="panel-left-bg" id="panel-left-bg" aria-hidden="true"></div>
+  <div class="panel-left-overlay" aria-hidden="true"></div>
+
+  <div class="panel-left-glass">
+    <div class="sidebar-profile">
+      {% if site.avatar %}
+      <div class="sidebar-avatar">
+        <img src="{{ site.avatar | relative_url }}" alt="{{ p.name_zh }}" width="108" height="108">
+      </div>
+      {% endif %}
+
+      <h1 class="sidebar-name">{{ p.name_zh }}</h1>
+      <p class="sidebar-name-en">{{ p.name_en }}</p>
+
+      <p class="sidebar-meta i18n-zh">{{ p.title }}</p>
+      <p class="sidebar-meta i18n-en">{{ pe.title }}</p>
+
+      <p class="sidebar-meta subtle i18n-zh">{{ p.affiliation }}</p>
+      <p class="sidebar-meta subtle i18n-en">{{ pe.affiliation }}</p>
+
+      <p class="sidebar-interests">
+        <span class="i18n-zh"><strong>{{ loc.zh.profile.interests }}：</strong>{% for i in p.interests %}{{ i }}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
+        <span class="i18n-en"><strong>{{ loc.en.profile.interests }}:</strong> {% for i in pe.interests %}{{ i }}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
+      </p>
+
+      <div class="sidebar-links">
+        <a href="mailto:{{ p.email }}" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="{{ p.github }}" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="{{ p.cv | relative_url }}" target="_blank" rel="noopener" title="CV"><i class="fas fa-file-pdf"></i></a>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Section navigation">
+      <button type="button" class="sidebar-nav-btn is-active" data-page="home">
+        <span class="i18n-zh">{{ loc.zh.nav.home }}</span>
+        <span class="i18n-en">{{ loc.en.nav.home }}</span>
+      </button>
+      <button type="button" class="sidebar-nav-btn" data-page="education">
+        <span class="i18n-zh">{{ loc.zh.nav.education }}</span>
+        <span class="i18n-en">{{ loc.en.nav.education }}</span>
+      </button>
+      <button type="button" class="sidebar-nav-btn" data-page="experience">
+        <span class="i18n-zh">{{ loc.zh.nav.experience }}</span>
+        <span class="i18n-en">{{ loc.en.nav.experience }}</span>
+      </button>
+      <button type="button" class="sidebar-nav-btn" data-page="awards">
+        <span class="i18n-zh">{{ loc.zh.nav.awards }}</span>
+        <span class="i18n-en">{{ loc.en.nav.awards }}</span>
+      </button>
+      <button type="button" class="sidebar-nav-btn" data-page="services">
+        <span class="i18n-zh">{{ loc.zh.nav.services }}</span>
+        <span class="i18n-en">{{ loc.en.nav.services }}</span>
+      </button>
+    </nav>
+  </div>
+</aside>

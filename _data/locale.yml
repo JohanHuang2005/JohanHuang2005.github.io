@@ -1,0 +1,53 @@
+zh:
+  nav:
+    home: 动态·论文
+    education: 教育
+    experience: 经历
+    awards: 荣誉
+    services: 学术服务
+  sections:
+    news: 动态
+    publications: 论文
+    pub_accepted: 已接收 / 已发表
+    pub_review: 投稿中
+    education: 教育背景
+    experience: 科研与项目经历
+    research: 科研经历
+    projects: 项目经历
+    skills: 技能
+    awards: 荣誉与奖励
+    services: 学术服务
+    reviewer: 审稿人
+  profile:
+    interests: 研究方向
+  theme_light: 浅色
+  theme_dark: 深色
+  lang_zh: 中文
+  lang_en: EN
+
+en:
+  nav:
+    home: News & Papers
+    education: Education
+    experience: Experience
+    awards: Awards
+    services: Service
+  sections:
+    news: News
+    publications: Publications
+    pub_accepted: Accepted
+    pub_review: Under Review
+    education: Education
+    experience: Research & Projects
+    research: Research
+    projects: Projects
+    skills: Skills
+    awards: Honors & Awards
+    services: Academic Service
+    reviewer: Reviewer
+  profile:
+    interests: Research Interests
+  theme_light: Light
+  theme_dark: Dark
+  lang_zh: 中文
+  lang_en: EN

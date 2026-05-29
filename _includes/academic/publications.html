@@ -1,11 +1,20 @@
-<section id="publications" class="academic-section">
-  <h2 class="section-title">论文</h2>
+{% assign lang = include.lang | default: 'zh' %}
+{% if lang == 'en' %}
+  {% assign pubs = site.data.en.publications %}
+  {% assign loc = site.data.locale.en.sections %}
+{% else %}
+  {% assign pubs = site.data.publications %}
+  {% assign loc = site.data.locale.zh.sections %}
+{% endif %}
 
-  {% assign accepted = site.data.publications | where: "status", "accepted" %}
-  {% assign under_review = site.data.publications | where: "status", "under_review" %}
+{% assign accepted = pubs | where: "status", "accepted" %}
+{% assign under_review = pubs | where: "status", "under_review" %}
+
+<section class="academic-section">
+  <h2 class="section-title">{{ loc.publications }}</h2>
 
   {% if accepted.size > 0 %}
-  <h3 class="subsection-title">已接收 / 已发表</h3>
+  <h3 class="subsection-title">{{ loc.pub_accepted }}</h3>
   <ol class="pub-list">
     {% for pub in accepted %}
     <li class="pub-item">
@@ -20,7 +29,7 @@
   {% endif %}
 
   {% if under_review.size > 0 %}
-  <h3 class="subsection-title">投稿中</h3>
+  <h3 class="subsection-title">{{ loc.pub_review }}</h3>
   <ol class="pub-list">
     {% for pub in under_review %}
     <li class="pub-item">

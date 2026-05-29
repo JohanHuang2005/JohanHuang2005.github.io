@@ -1,6 +1,15 @@
-<section id="education" class="academic-section">
-  <h2 class="section-title">教育背景</h2>
-  {% for edu in site.data.education %}
+{% assign lang = include.lang | default: 'zh' %}
+{% if lang == 'en' %}
+  {% assign items = site.data.en.education %}
+  {% assign loc = site.data.locale.en.sections %}
+{% else %}
+  {% assign items = site.data.education %}
+  {% assign loc = site.data.locale.zh.sections %}
+{% endif %}
+
+<section class="academic-section">
+  <h2 class="section-title">{{ loc.education }}</h2>
+  {% for edu in items %}
   <div class="edu-item">
     <p class="edu-school"><strong>{{ edu.school }}</strong></p>
     <p class="edu-meta">{{ edu.degree }} · {{ edu.period }}</p>
