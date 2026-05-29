@@ -11,7 +11,8 @@
   --text-on-bg: rgba(255, 255, 255, 0.96);
   --link: #0071e3;
   --accent: rgba(0, 122, 255, 0.2);
-  --fade-from: rgba(245, 245, 247, 0.35);
+  --glass-sidebar: rgba(255, 255, 255, 0.36);
+  --glass-sidebar-border: rgba(255, 255, 255, 0.42);
   --body-bg: #e8e8ed;
   --blur: blur(40px) saturate(200%);
 }
@@ -27,7 +28,8 @@ html[data-theme="dark"] {
   --text-on-bg: #f5f5f7;
   --link: #64b5ff;
   --accent: rgba(10, 132, 255, 0.28);
-  --fade-from: rgba(0, 0, 0, 0.35);
+  --glass-sidebar: rgba(44, 44, 48, 0.55);
+  --glass-sidebar-border: rgba(255, 255, 255, 0.16);
   --body-bg: #000000;
 }
 
@@ -77,93 +79,89 @@ html[data-lang="en"] [data-lang-content="en"] {
   overflow: hidden;
 }
 
-// —— Left: fixed, no scroll ——
+// —— Left: fixed, wider, no scroll ——
 .panel-left {
   position: relative;
-  flex: 0 0 38%;
-  min-width: 18rem;
-  max-width: 28rem;
+  flex: 0 0 44%;
+  min-width: 20rem;
+  max-width: 36rem;
   height: 100vh;
   overflow: hidden;
   flex-shrink: 0;
+  isolation: isolate;
 }
 
 .panel-left-bg {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: opacity 0.6s ease;
-  will-change: opacity;
-}
-
-.panel-left-vignette {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    165deg,
-    rgba(0, 0, 0, 0.06) 0%,
-    rgba(0, 0, 0, 0.22) 55%,
-    rgba(0, 0, 0, 0.38) 100%
-  );
-  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
 .panel-left-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.65rem;
-  padding: 1rem 1rem 1.1rem;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  padding: 1.15rem 1.35rem 1.15rem;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-.glass-profile {
-  @include glass-surface(rgba(255, 255, 255, 0.14));
+.sidebar-avatar-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
-  max-width: 15.5rem;
+  padding-top: 0.25rem;
+}
+
+.sidebar-avatar-img {
+  width: 10rem;
+  height: 12rem;
+  max-width: calc(100% - 1rem);
+  object-fit: contain;
+  object-position: center top;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: var(--glass-sidebar);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  box-shadow: var(--glass-shadow), var(--glass-inset);
+  padding: 0.25rem;
+}
+
+.glass-panel {
+  background: var(--glass-sidebar);
+  border: 1px solid var(--glass-sidebar-border);
+  box-shadow: var(--glass-shadow), var(--glass-inset);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border-radius: 1.15rem;
+  color: var(--text-on-bg);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.glass-profile {
+  width: 100%;
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
-  padding: 1rem 0.95rem 0.85rem;
-  border-radius: 1.35rem;
+  padding: 0.9rem 1.1rem 0.85rem;
   text-align: center;
+}
+
+html[data-theme="dark"] .glass-panel {
   color: var(--text-on-bg);
-}
-
-html[data-theme="dark"] .glass-profile {
-  @include glass-surface(var(--glass-bg));
-  color: var(--text-on-bg);
-}
-
-.sidebar-profile,
-.glass-profile {
-  width: 100%;
-}
-
-.sidebar-avatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 0.85rem;
-}
-
-.sidebar-avatar img {
-  width: 7.5rem;
-  height: 9rem;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: center center;
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .sidebar-name {
@@ -181,13 +179,13 @@ html[data-theme="dark"] .glass-profile {
 
 .sidebar-meta {
   font-size: 0.8rem;
-  margin: 0.18rem 0;
-  line-height: 1.4;
-  opacity: 0.92;
+  margin: 0.2rem 0;
+  line-height: 1.45;
+  padding: 0 0.15rem;
 
   &.subtle {
-    opacity: 0.78;
     font-size: 0.76rem;
+    opacity: 0.92;
   }
 }
 
@@ -225,19 +223,13 @@ html[data-theme="dark"] .glass-profile {
 }
 
 .glass-nav {
-  @include glass-surface(rgba(255, 255, 255, 0.1));
   width: 100%;
-  max-width: 15.5rem;
   flex: 0 0 auto;
-  padding: 0.5rem;
-  border-radius: 1.1rem;
+  margin-top: auto;
+  padding: 0.5rem 0.55rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-}
-
-html[data-theme="dark"] .glass-nav {
-  @include glass-surface(var(--glass-bg));
 }
 
 .sidebar-nav-btn {
@@ -282,17 +274,6 @@ html[data-theme="dark"] .sidebar-nav-btn {
   height: 100vh;
   min-width: 0;
   overflow: hidden;
-}
-
-.panel-right-fade {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4.5rem;
-  z-index: 2;
-  pointer-events: none;
-  background: linear-gradient(90deg, var(--fade-from) 0%, transparent 100%);
 }
 
 .panel-right-glass {
@@ -537,8 +518,9 @@ html[data-theme="dark"] .exp-item {
   }
 }
 
-html[data-lang="zh"] [data-lang-content="en"] .pub-card-media img {
+html[data-lang="zh"] [data-lang-content="en"] {
   content-visibility: hidden;
+  contain-intrinsic-size: 0 800px;
 }
 
 @media (max-width: 52rem) {
@@ -569,15 +551,16 @@ html[data-lang="zh"] [data-lang-content="en"] .pub-card-media img {
   }
 
   .glass-profile {
-    overflow: visible;
+    overflow-y: visible;
+  }
+
+  .sidebar-avatar-img {
+    width: 8.5rem;
+    height: 10rem;
   }
 
   .panel-right {
     height: auto;
-  }
-
-  .panel-right-fade {
-    display: none;
   }
 
   .panel-right-glass {
