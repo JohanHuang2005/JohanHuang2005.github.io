@@ -1,0 +1,35 @@
+- category: conference
+  status: accepted
+  title: "面向小鼠 NAFLD 多任务病理评分的 Multi-task ViT 联合建模方法"
+  authors: "<strong>黄友涵</strong>*（共同第一作者，排名第一）, 合作者"
+  venue: "IEEE International Conference on Multimedia and Expo (ICME) 2026, Oral Presentation (CCF-B)"
+  year: 2026
+  links:
+    paper: "https://arxiv.org/abs/2605.29852"
+    code: null
+    project: null
+    video: null
+
+- category: conference
+  status: under_review
+  title: "基于偏振信息的多视图逆渲染透明物体三维重建"
+  authors: "<strong>黄友涵</strong>（第一作者）, 合作者"
+  venue: "European Conference on Computer Vision (ECCV) 2026 — 投稿中"
+  year: 2026
+  links:
+    paper: null
+    code: null
+    project: null
+    video: null
+
+- category: journal
+  status: under_review
+  title: "基于椭圆柱人体建模与几何补全的多毫米波雷达协同感知外参标定"
+  authors: "合作者, <strong>黄友涵</strong>, 等"
+  venue: "IEEE Transactions on Mobile Computing (TMC) — 投稿中 (CCF-A)"
+  year: 2026
+  links:
+    paper: null
+    code: null
+    project: null
+    video: null

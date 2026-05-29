@@ -1,0 +1,34 @@
+<section id="publications" class="academic-section">
+  <h2 class="section-title">论文</h2>
+
+  {% assign accepted = site.data.publications | where: "status", "accepted" %}
+  {% assign under_review = site.data.publications | where: "status", "under_review" %}
+
+  {% if accepted.size > 0 %}
+  <h3 class="subsection-title">已接收 / 已发表</h3>
+  <ol class="pub-list">
+    {% for pub in accepted %}
+    <li class="pub-item">
+      <p class="pub-title">{{ pub.title }}</p>
+      <p class="pub-authors">{{ pub.authors }}</p>
+      <p class="pub-venue"><em>{{ pub.venue }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}</p>
+      {% include academic/pub-links.html pub=pub %}
+    </li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+
+  {% if under_review.size > 0 %}
+  <h3 class="subsection-title">投稿中</h3>
+  <ol class="pub-list">
+    {% for pub in under_review %}
+    <li class="pub-item">
+      <p class="pub-title">{{ pub.title }}</p>
+      <p class="pub-authors">{{ pub.authors }}</p>
+      <p class="pub-venue"><em>{{ pub.venue }}</em>{% if pub.year %}, {{ pub.year }}{% endif %}</p>
+      {% include academic/pub-links.html pub=pub %}
+    </li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+</section>

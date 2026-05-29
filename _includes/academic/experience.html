@@ -1,0 +1,45 @@
+<section id="experience" class="academic-section">
+  <h2 class="section-title">科研与项目经历</h2>
+
+  <h3 class="subsection-title">科研经历</h3>
+  {% for item in site.data.experience.research %}
+  <div class="exp-item">
+    <p class="exp-header">
+      <strong>{{ item.org }}</strong> — {{ item.role }}
+      <span class="exp-period">{{ item.period }}</span>
+    </p>
+    <ul>
+      {% for bullet in item.bullets %}
+      <li>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+
+  <h3 class="subsection-title">项目经历</h3>
+  {% for item in site.data.experience.projects %}
+  <div class="exp-item">
+    <p class="exp-header">
+      <strong>{{ item.title }}</strong> — {{ item.role }}
+    </p>
+    <ul>
+      {% for bullet in item.bullets %}
+      <li>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+    {% if item.links.code %}
+    <p class="exp-links"><a href="{{ item.links.code }}" target="_blank" rel="noopener">[Code]</a></p>
+    {% endif %}
+  </div>
+  {% endfor %}
+
+  {% assign skills = site.data.skills %}
+  {% if skills %}
+  <h3 class="subsection-title">技能</h3>
+  <ul class="skills-list">
+    <li><strong>编程：</strong>{{ skills.programming }}</li>
+    <li><strong>框架/工具：</strong>{{ skills.tools }}</li>
+    <li><strong>英语：</strong>{{ skills.english }}</li>
+  </ul>
+  {% endif %}
+</section>

@@ -1,0 +1,16 @@
+<section id="education" class="academic-section">
+  <h2 class="section-title">教育背景</h2>
+  {% for edu in site.data.education %}
+  <div class="edu-item">
+    <p class="edu-school"><strong>{{ edu.school }}</strong></p>
+    <p class="edu-meta">{{ edu.degree }} · {{ edu.period }}</p>
+    {% if edu.details %}
+    <ul>
+      {% for d in edu.details %}
+      <li>{{ d }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endfor %}
+</section>

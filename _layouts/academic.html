@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
+
+  {% include head.html %}
+
+  <body class="academic-body">
+    <header class="academic-topbar">
+      <div class="academic-container">
+        <a class="academic-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <nav class="academic-nav" aria-label="页面导航">
+          <a href="#profile">简介</a>
+          <a href="#news">动态</a>
+          <a href="#publications">论文</a>
+          <a href="#education">教育</a>
+          <a href="#experience">经历</a>
+          <a href="#awards">荣誉</a>
+          <a href="#services">学术服务</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="academic-main academic-container">
+      {{ content }}
+    </main>
+
+    <footer class="academic-footer academic-container">
+      <small>
+        &copy; {{ site.time | date: '%Y' }}
+        {% if site.author %}<a href="{{ site.author.url }}">{{ site.author.name }}</a>{% endif %}.
+        Powered by <a href="https://jekyllrb.com/">Jekyll</a>.
+      </small>
+    </footer>
+
+    <script async src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    {%- include scroll.html -%}
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+      {%- include google-analytics.html -%}
+    {%- endif -%}
+  </body>
+</html>

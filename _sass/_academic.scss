@@ -1,0 +1,289 @@
+// Academic single-page homepage
+$academic-max-width: 52rem;
+$academic-text: #1a1a1a;
+$academic-muted: #555;
+$academic-link: #0056b3;
+$academic-border: #e8e8e8;
+$academic-bg: #fafafa;
+
+.academic-body {
+  margin: 0;
+  background: #fff;
+  color: $academic-text;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.academic-container {
+  max-width: $academic-max-width;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.academic-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid $academic-border;
+  backdrop-filter: blur(6px);
+
+  .academic-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.academic-brand {
+  font-weight: 600;
+  color: $academic-text;
+  text-decoration: none;
+
+  &:hover {
+    color: $academic-link;
+  }
+}
+
+.academic-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-size: 0.9rem;
+
+  a {
+    color: $academic-muted;
+    text-decoration: none;
+
+    &:hover {
+      color: $academic-link;
+    }
+  }
+}
+
+.academic-main {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.academic-section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $academic-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid $academic-text;
+}
+
+.subsection-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem;
+  color: $academic-muted;
+}
+
+// Profile
+.academic-profile {
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.profile-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.profile-photo img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid $academic-border;
+}
+
+.profile-name {
+  font-size: 1.75rem;
+  margin: 0 0 0.35rem;
+  line-height: 1.3;
+}
+
+.profile-name-en {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: $academic-muted;
+}
+
+.profile-title,
+.profile-affiliation,
+.profile-location {
+  margin: 0.2rem 0;
+  color: $academic-muted;
+}
+
+.profile-interests {
+  margin: 0.75rem 0;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.75rem;
+
+  a {
+    color: $academic-link;
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    i {
+      margin-right: 0.25rem;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// News
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 0.65rem;
+  }
+}
+
+.news-date {
+  font-weight: 600;
+  color: $academic-text;
+  margin-right: 0.35rem;
+}
+
+// Publications
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: pub;
+}
+
+.pub-item {
+  margin-bottom: 1.25rem;
+  padding-left: 0;
+}
+
+.pub-title {
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.pub-authors,
+.pub-venue {
+  margin: 0.15rem 0;
+  color: $academic-muted;
+  font-size: 0.95rem;
+}
+
+.pub-links a {
+  color: $academic-link;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Education & experience
+.edu-item,
+.exp-item {
+  margin-bottom: 1.25rem;
+}
+
+.edu-school,
+.exp-header {
+  margin: 0 0 0.25rem;
+}
+
+.edu-meta,
+.exp-period {
+  color: $academic-muted;
+  font-size: 0.95rem;
+}
+
+.exp-period {
+  display: block;
+  margin-top: 0.15rem;
+
+  @media (min-width: 40rem) {
+    display: inline;
+    margin-top: 0;
+
+    &::before {
+      content: " · ";
+    }
+  }
+}
+
+.exp-links a {
+  color: $academic-link;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.skills-list {
+  margin-top: 0.5rem;
+}
+
+.academic-footer {
+  padding: 1.5rem 0 2rem;
+  border-top: 1px solid $academic-border;
+  color: $academic-muted;
+  font-size: 0.85rem;
+
+  a {
+    color: $academic-link;
+  }
+}
+
+@media (max-width: 36rem) {
+  .academic-nav {
+    font-size: 0.82rem;
+    gap: 0.25rem 0.65rem;
+  }
+
+  .profile-photo img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media print {
+  .academic-topbar {
+    position: static;
+  }
+
+  .academic-nav {
+    display: none;
+  }
+}

@@ -1,6 +1,6 @@
 # Setup
-title: Youhan's Homepage  # 简洁的网站标题，类似导师的格式
-description: Personal homepage of Youhan Huang, a third-year undergraduate student specializing in 3D computer vision, point cloud understanding, and AI applications  # 优化描述，包含关键词
+title: 黄友涵
+description: 黄友涵（Youhan Huang）个人学术主页 — 北京邮电大学电子信息工程本科，研究方向为三维视觉、机器学习与智能感知。
 url: https://johanhuang2005.github.io
 avatar: /me.jpg
 paginate: 5
@@ -38,7 +38,7 @@ social:
   links:
     - https://github.com/JohanHuang2005  # 保留你的GitHub链接
 google_site_verification: xxxxx  # 如果你有Google验证代码，可以添加
-lang: en  # 设置为英文
+lang: zh-CN
 
 sass:
   sass_dir: _sass
@@ -54,6 +54,6 @@ sass:
 
 # Specify the author for blog posts
 author:
-  name: Youhan Huang  # 替换为你的名字
-  url: https://github.com/JohanHuang2005/  # 替换为你的GitHub或个人网站
-  email: 3138766352@qq.com  # 替换为你的邮箱
+  name: 黄友涵
+  url: https://github.com/JohanHuang2005/
+  email: johanhuang@bupt.edu.cn
