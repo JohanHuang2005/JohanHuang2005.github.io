@@ -54,19 +54,19 @@
     },
     {
       "date": "2025.11",
-      "text": "Joined the Image Aesthetics Assessment group at BUPT; supporting ST-VAA / long-form video aesthetics research."
+      "text": "Joined the Image Aesthetics Assessment group at BUPT; working on long-form video aesthetics assessment."
     },
     {
       "date": "2025.10",
-      "text": "Led construction and open-sourcing of a multi-task mouse NAFLD pathology scoring dataset."
+      "text": "Led construction of a multi-task mouse NAFLD pathology scoring dataset."
     },
     {
       "date": "2025.04",
-      "text": "Joined the Pattern Recognition & Intelligent Vision Lab at BUPT for PolTrans (polarization-guided transparent object reconstruction)."
+      "text": "Joined the Pattern Recognition & Intelligent Vision Lab at BUPT for polarization-guided transparent object reconstruction."
     },
     {
       "date": "2024.08",
-      "text": "Started research internship at Peking University on multi-radar sensing (TriCal) and low-bandwidth mmWave pose estimation (mmGlimpse)."
+      "text": "Started research internship at Peking University on multi-radar sensing and low-bandwidth mmWave human pose estimation."
     }
   ],
   "publications": [
@@ -81,46 +81,6 @@
       "links": {
         "paper": "https://arxiv.org/abs/2605.29852"
       }
-    },
-    {
-      "id": "tmc-trical",
-      "status": "under_review",
-      "title": "Turning Human Motion into a Calibration Ruler: Device-Free Calibration for Multi-Radar Networks",
-      "authors": "Zizhou Fan, Hongliu Yang, Jie Xiong, <strong>Youhan Huang</strong>, Xusheng Zhang, Duo Zhang, Wanru Ning, Jiarun Zhou, Junzhe Wang, Zhehui Yin, Daqing Zhang",
-      "venue": "IEEE Transactions on Mobile Computing (TMC) — Under Review (CCF-A)",
-      "year": 2026,
-      "image": "/assets/publications/pub-tmc-2026.jpg",
-      "links": {}
-    },
-    {
-      "id": "sensys-mmglimpse",
-      "status": "under_review",
-      "title": "mmGlimpse: Breaking the Bandwidth Barrier for Real-time Human Pose Estimation with Low-cost 24 GHz mmWave Radar",
-      "authors": "Authors withheld (double-blind review)",
-      "venue": "ACM SenSys 2027 — Under Review (CCF-B)",
-      "year": 2027,
-      "image": null,
-      "links": {}
-    },
-    {
-      "id": "aaai-poltrans",
-      "status": "under_review",
-      "title": "PolTrans: Polarization-Guided Neural Implicit Surface Reconstruction for Transparent Objects",
-      "authors": "<strong>Youhan Huang</strong>, collaborators",
-      "venue": "AAAI 2027 — Under Review (CCF-A)",
-      "year": 2027,
-      "image": "/assets/publications/pub-eccv-2026.jpg",
-      "links": {}
-    },
-    {
-      "id": "tip-stvaa",
-      "status": "under_review",
-      "title": "Rethinking Video Aesthetics Assessment: From Holistic Scoring to Spatiotemporal Quantification",
-      "authors": "Collaborators, <strong>Youhan Huang</strong>, et al.",
-      "venue": "IEEE TIP — Under Review (CCF-A)",
-      "year": 2026,
-      "image": null,
-      "links": {}
     }
   ],
   "research": [
@@ -134,19 +94,19 @@
       "org": "Peking University · Intelligent Wireless Sensing",
       "role": "Research Intern",
       "period": "2024 – 2025",
-      "summary": "Contributed to TriCal, a device-free multi-radar calibration system that models walking humans as elliptical cylinders (IEEE TMC, under review). Also supported mmGlimpse for real-time human pose estimation on low-cost 24 GHz radars under tight bandwidth (ACM SenSys, under review)."
+      "summary": "Worked on device-free multi-radar extrinsic calibration that models walking humans as elliptical cylinders for relative pose recovery. Also built end-to-end pipelines for real-time human pose estimation on low-cost 24 GHz mmWave radars under tight bandwidth constraints."
     },
     {
       "org": "BUPT · Pattern Recognition & Intelligent Vision Lab",
       "role": "Research Intern",
       "period": "2025 – 2026",
-      "summary": "Worked on PolTrans: polarization-guided neural implicit surface reconstruction for transparent objects, combining a neural Stokes environment field with dual-surface Mueller transport. First-author paper under review at AAAI 2027."
+      "summary": "Studied polarization-guided neural implicit surface reconstruction for transparent objects, combining polarized illumination modeling with dual-surface light transport and an implicit geometric representation."
     },
     {
       "org": "BUPT · Image Aesthetics Assessment Lab",
       "role": "Research Intern",
       "period": "2025 – 2026",
-      "summary": "Supported ST-VAA research that reframes video aesthetics from holistic scoring to spatiotemporal quantification, including baselines, evaluations, and writing. Paper under review at IEEE TIP."
+      "summary": "Supported research that reframes video aesthetics assessment from holistic scoring toward fine-grained spatiotemporal quantification, including baselines, evaluations, and writing."
     }
   ],
   "projects": [
