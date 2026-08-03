@@ -1,5 +1,0 @@
-source "https://rubygems.org"
-gemspec
-
-gem 'jekyll-compose', group: [:jekyll_plugins]
-gem 'jekyll-toc', group: [:jekyll_plugins]

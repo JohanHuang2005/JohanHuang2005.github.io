@@ -1,9 +1,0 @@
-- title: Email
-  url: mailto:3138766352@qq.com  # 添加mailto:前缀以便直接发送邮件
-  icon: fas fa-envelope
-- title: GitHub
-  url: https://github.com/JohanHuang2005
-  icon: fab fa-github
-- title: Phone
-  url: tel:+8613501173033
-  icon: fas fa-phone

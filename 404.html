@@ -1,10 +1,36 @@
----
-layout: default
-title: "404: Page not found"
-permalink: 404.html
----
-
-<div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ "/" | relative_url }}">Head back home</a> to try finding it again.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found · Youhan Huang</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .missing {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .missing h1 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      margin: 0 0 0.75rem;
+    }
+    .missing p {
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="missing">
+    <div>
+      <h1>Page not found</h1>
+      <p>This URL does not exist on this site.</p>
+      <a href="/">Back to homepage</a>
+    </div>
+  </div>
+</body>
+</html>

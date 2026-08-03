@@ -1,0 +1,12 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata/
+.sass-cache/
+node_modules/
+JH.github.io/
+*.gem
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
