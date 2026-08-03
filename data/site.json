@@ -21,7 +21,7 @@
     "cv": "/assets/cv.pdf",
     "cv_zh": "/assets/cv-zh.pdf",
     "avatar": "/assets/me.jpg",
-    "interests": ["3D Vision", "Machine Learning", "Intelligent Sensing"],
+    "interests": ["Computer Vision", "Machine Learning", "Intelligent Sensing"],
     "bio": "I am an undergraduate at BUPT working on computer vision and intelligent sensing. I care about clean problem formulations, reproducible experiments, and systems that connect perception algorithms to real sensing hardware."
   },
   "nav": [
@@ -30,6 +30,7 @@
     { "id": "news", "label": "News" },
     { "id": "publications", "label": "Publications" },
     { "id": "research", "label": "Research" },
+    { "id": "intern", "label": "Intern" },
     { "id": "projects", "label": "Projects" },
     { "id": "awards", "label": "Awards" },
     { "id": "skills", "label": "Skills" },
@@ -41,8 +42,8 @@
       "degree": "B.Sc. in Electronic Information Engineering",
       "period": "Sep 2023 – Jul 2027",
       "details": [
-        "GPA: 92.05 / 100",
-        "Rank: 2 / 101",
+        "GPA: 92+ / 100",
+        "Rank: top <2%",
         "Selected coursework: Engineering Mathematics (97), Linear Algebra (94), Computer Networks (97), Programming Fundamentals (96), Introduction to AI (95), Machine Learning (95)"
       ]
     }
@@ -66,7 +67,7 @@
     },
     {
       "date": "2024.08",
-      "text": "Started research internship at Peking University on multi-radar sensing and low-bandwidth mmWave human pose estimation."
+      "text": "Started research internship at Peking University."
     }
   ],
   "publications": [
@@ -109,6 +110,14 @@
       "summary": "Supported research that reframes video aesthetics assessment from holistic scoring toward fine-grained spatiotemporal quantification, including baselines, evaluations, and writing."
     }
   ],
+  "intern": [
+    {
+      "org": "Siemens · Data & Artificial Intelligence",
+      "role": "Intern",
+      "period": "2026 – Present",
+      "summary": "Building automatic experiment agents, cleaning industrial datasets, and developing time-series world models for forecasting in industrial scenarios."
+    }
+  ],
   "projects": [
     {
       "title": "LidarCar",
@@ -142,7 +151,10 @@
     "National Scholarship (2023–2024, 2024–2025)",
     "Outstanding Student, BUPT (2023–2024, 2024–2025)",
     "MCM/ICM Honorable Mention, COMAP 2025",
-    "Third Prize, 16th National Undergraduate Mathematics Contest, 2024"
+    "Third Prize, 16th National Undergraduate Mathematics Contest, 2024",
+    "Third Prize, 17th “Rising Star” English Speech Contest, BUPT, 2024",
+    "Outstanding Peer Tutoring Volunteer, BUPT, 2025",
+    "Honor Certificate, BUPT Cross-Cultural Communication Forum, 2024"
   ],
   "skills": {
     "languages": ["Python", "Java", "C", "MATLAB", "HTML/CSS/JS"],

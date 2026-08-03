@@ -26,6 +26,13 @@ js/main.js      Render from site.json, enter transition, nav
 data/site.json  Profile, news, pubs, research, projects, …
 ```
 
+## Credits
+
+Design inspiration and borrowed ideas:
+
+- Cover interaction and WebGL fluid background: [SimonAKing/HomePage](https://github.com/SimonAKing/HomePage) (fluid simulation originally by [Pavel Dobryakov](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation))
+- Long-page content section rhythm: [jiangmuran.com](https://jiangmuran.com/)
+
 ## Deploy
 
 Push to the GitHub Pages user site (`*.github.io`). `.nojekyll` disables Jekyll processing.

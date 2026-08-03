@@ -149,8 +149,8 @@
     );
   }
 
-  function renderResearch(items) {
-    const html = items
+  function renderExperienceCards(items, id, label, title) {
+    const html = (items || [])
       .map(
         (item) => `
       <li class="card-item">
@@ -163,7 +163,16 @@
       </li>`
       )
       .join("");
-    return sectionShell("research", "Experience", "Research", `<ul class="card-list">${html}</ul>`);
+    return sectionShell(id, label, title, `<ul class="card-list">${html}</ul>`);
+  }
+
+  function renderResearch(items) {
+    return renderExperienceCards(items, "research", "Experience", "Research");
+  }
+
+  function renderIntern(items) {
+    if (!items || !items.length) return "";
+    return renderExperienceCards(items, "intern", "Industry", "Intern");
   }
 
   function renderProjects(items) {
@@ -249,6 +258,7 @@
       renderNews(data.news),
       renderPublications(data.publications),
       renderResearch(data.research),
+      renderIntern(data.intern),
       renderProjects(data.projects),
       renderAwards(data.awards),
       renderSkills(data.skills, data.hobbies),
