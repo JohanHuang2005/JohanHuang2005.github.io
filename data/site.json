@@ -148,13 +148,34 @@
     }
   ],
   "awards": [
-    "National Scholarship (2023–2024, 2024–2025)",
-    "Outstanding Student, BUPT (2023–2024, 2024–2025)",
-    "MCM/ICM Honorable Mention, COMAP 2025",
-    "Third Prize, 16th National Undergraduate Mathematics Contest, 2024",
-    "Third Prize, 17th “Rising Star” English Speech Contest, BUPT, 2024",
-    "Outstanding Peer Tutoring Volunteer, BUPT, 2025",
-    "Honor Certificate, BUPT Cross-Cultural Communication Forum, 2024"
+    {
+      "title": "National Scholarship",
+      "meta": "BUPT · 2023–2024, 2024–2025"
+    },
+    {
+      "title": "Outstanding Student",
+      "meta": "BUPT · 2023–2024, 2024–2025"
+    },
+    {
+      "title": "MCM/ICM Honorable Mention",
+      "meta": "COMAP · 2025"
+    },
+    {
+      "title": "Third Prize, 16th National Undergraduate Mathematics Contest",
+      "meta": "2024"
+    },
+    {
+      "title": "Third Prize, 17th “Rising Star” English Speech Contest",
+      "meta": "BUPT · 2024"
+    },
+    {
+      "title": "Outstanding Peer Tutoring Volunteer",
+      "meta": "BUPT · 2025"
+    },
+    {
+      "title": "Honor Certificate, Cross-Cultural Communication Forum",
+      "meta": "BUPT · 2024"
+    }
   ],
   "skills": {
     "languages": ["Python", "Java", "C", "MATLAB", "HTML/CSS/JS"],

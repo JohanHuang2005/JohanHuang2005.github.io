@@ -1,5 +1,6 @@
 (() => {
   const COVER_KEY = "homepage-entered";
+  const REDUCE_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const $ = (sel, root = document) => root.querySelector(sel);
 
@@ -37,6 +38,10 @@
       a.textContent = "Email";
       links.appendChild(a);
     }
+
+    requestAnimationFrame(() => {
+      $("#cover-content")?.classList.add("is-ready");
+    });
   }
 
   function renderNav(nav) {
@@ -49,12 +54,20 @@
 
   function sectionShell(id, label, title, bodyHtml) {
     return `
-      <section class="section" id="${id}">
+      <section class="section reveal" id="${id}">
         <p class="section-label">${label}</p>
         <h2 class="section-title">${title}</h2>
         ${bodyHtml}
       </section>
     `;
+  }
+
+  function periodHtml(period) {
+    const text = escapeHtml(period || "");
+    const isNow = /present|current/i.test(period || "");
+    return `<span class="item-period">${text}${
+      isNow ? '<span class="badge-now">Now</span>' : ""
+    }</span>`;
   }
 
   function renderAbout(profile) {
@@ -82,11 +95,11 @@
   function renderEducation(items) {
     const html = items
       .map(
-        (item) => `
-      <li class="timeline-item">
+        (item, i) => `
+      <li class="timeline-item reveal" style="--d:${i * 60}ms">
         <div class="item-head">
           <h3 class="item-title">${escapeHtml(item.school)}</h3>
-          <span class="item-period">${escapeHtml(item.period)}</span>
+          ${periodHtml(item.period)}
         </div>
         <p class="item-sub">${escapeHtml(item.degree)}</p>
         <ul class="detail-list">
@@ -101,8 +114,8 @@
   function renderNews(items) {
     const html = items
       .map(
-        (item) => `
-      <li class="news-item">
+        (item, i) => `
+      <li class="news-item reveal" style="--d:${i * 50}ms">
         <span class="news-date">${escapeHtml(item.date)}</span>
         <p class="news-text">${escapeHtml(item.text)}</p>
       </li>`
@@ -113,7 +126,7 @@
 
   function renderPublications(items) {
     const html = items
-      .map((pub) => {
+      .map((pub, i) => {
         const hasImage = !!pub.image;
         const status =
           pub.status === "accepted"
@@ -129,7 +142,7 @@
           )
           .join("");
         return `
-        <li class="pub-item ${hasImage ? "" : "no-image"}">
+        <li class="pub-item reveal ${hasImage ? "" : "no-image"}" style="--d:${i * 60}ms">
           ${hasImage ? `<img class="pub-thumb" src="${pub.image}" alt="" width="96" height="72">` : ""}
           <div>
             <span class="pub-status">${status}</span>
@@ -152,11 +165,11 @@
   function renderExperienceCards(items, id, label, title) {
     const html = (items || [])
       .map(
-        (item) => `
-      <li class="card-item">
+        (item, i) => `
+      <li class="card-item reveal" style="--d:${i * 60}ms">
         <div class="item-head">
           <h3 class="item-title">${escapeHtml(item.org)}</h3>
-          <span class="item-period">${escapeHtml(item.period)}</span>
+          ${periodHtml(item.period)}
         </div>
         <p class="item-sub">${escapeHtml(item.role)}</p>
         <p class="summary">${escapeHtml(item.summary)}</p>
@@ -177,15 +190,16 @@
 
   function renderProjects(items) {
     const html = items
-      .map((item) => {
-        const link = item.links && item.links.code
-          ? `<div class="pub-links"><a href="${item.links.code}" target="_blank" rel="noopener noreferrer">Code</a></div>`
-          : "";
+      .map((item, i) => {
+        const link =
+          item.links && item.links.code
+            ? `<div class="pub-links"><a href="${item.links.code}" target="_blank" rel="noopener noreferrer">Code</a></div>`
+            : "";
         return `
-        <li class="card-item">
+        <li class="card-item reveal" style="--d:${i * 60}ms">
           <div class="item-head">
             <h3 class="item-title">${escapeHtml(item.title)}</h3>
-            <span class="item-period">${escapeHtml(item.period || "")}</span>
+            ${periodHtml(item.period)}
           </div>
           <p class="item-sub">${escapeHtml(item.role)}</p>
           <p class="summary">${escapeHtml(item.summary)}</p>
@@ -197,28 +211,39 @@
   }
 
   function renderAwards(items) {
-    const html = items.map((a) => `<li class="card-item" style="padding:0.55rem 0">${escapeHtml(a)}</li>`).join("");
-    return sectionShell("awards", "Honors", "Awards", `<ul class="card-list">${html}</ul>`);
+    const html = (items || [])
+      .map((a, i) => {
+        if (typeof a === "string") {
+          return `<li class="award-item reveal" style="--d:${i * 45}ms"><p class="award-title">${escapeHtml(a)}</p></li>`;
+        }
+        return `
+        <li class="award-item reveal" style="--d:${i * 45}ms">
+          <p class="award-title">${escapeHtml(a.title)}</p>
+          <p class="award-meta">${escapeHtml(a.meta || "")}</p>
+        </li>`;
+      })
+      .join("");
+    return sectionShell("awards", "Honors", "Awards", `<ul class="award-list">${html}</ul>`);
   }
 
   function renderSkills(skills, hobbies) {
     const body = `
       <div class="skills-grid">
-        <div class="skill-block">
+        <div class="skill-block reveal">
           <h3>Languages</h3>
           <p>${escapeHtml((skills.languages || []).join(" · "))}</p>
         </div>
-        <div class="skill-block">
+        <div class="skill-block reveal" style="--d:50ms">
           <h3>Tools</h3>
           <p>${escapeHtml((skills.tools || []).join(" · "))}</p>
         </div>
-        <div class="skill-block">
+        <div class="skill-block reveal" style="--d:100ms">
           <h3>English</h3>
           <p>${escapeHtml(skills.english || "")}</p>
         </div>
         ${
           hobbies && hobbies.length
-            ? `<div class="skill-block"><h3>Interests</h3><p>${escapeHtml(hobbies.join(" · "))}</p></div>`
+            ? `<div class="skill-block reveal" style="--d:150ms"><h3>Interests</h3><p>${escapeHtml(hobbies.join(" · "))}</p></div>`
             : ""
         }
       </div>`;
@@ -227,8 +252,14 @@
 
   function renderContact(profile) {
     const rows = [
-      ["Email", `<a href="mailto:${profile.email}">${escapeHtml(profile.email)}</a>`],
-      ["GitHub", `<a href="${profile.github}" target="_blank" rel="noopener noreferrer">${escapeHtml(profile.github_username || "GitHub")}</a>`],
+      [
+        "Email",
+        `<a class="contact-cta" href="mailto:${profile.email}">${escapeHtml(profile.email)}</a>`
+      ],
+      [
+        "GitHub",
+        `<a href="${profile.github}" target="_blank" rel="noopener noreferrer">${escapeHtml(profile.github_username || "GitHub")}</a>`
+      ],
       ["CV", `<a href="${profile.cv}" target="_blank" rel="noopener noreferrer">English PDF</a>`]
     ];
     if (profile.cv_zh) {
@@ -240,8 +271,8 @@
     rows.push(["Location", escapeHtml(profile.location)]);
     const html = rows
       .map(
-        ([label, value]) => `
-      <li>
+        ([label, value], i) => `
+      <li class="reveal" style="--d:${i * 40}ms">
         <span class="contact-label">${label}</span>
         <span>${value}</span>
       </li>`
@@ -282,20 +313,24 @@
       .replace(/"/g, "&quot;");
   }
 
-  function enterSite({ persist = true } = {}) {
-    const cover = $("#cover");
-    const site = $("#site");
-    if (!cover || cover.classList.contains("is-leaving")) return;
-
+  function haltFluid() {
     if (typeof window.stopFluid === "function") window.stopFluid();
     else {
       window.switchPage = window.switchPage || {};
       window.switchPage.switched = true;
       if (window.config) window.config.PAUSED = true;
     }
+  }
 
+  function enterSite({ persist = true } = {}) {
+    const cover = $("#cover");
+    const site = $("#site");
+    if (!cover || cover.classList.contains("is-leaving")) return;
+
+    haltFluid();
     cover.classList.add("is-leaving");
     site.hidden = false;
+    requestAnimationFrame(() => site.classList.add("is-visible"));
 
     if (persist) {
       try {
@@ -308,7 +343,49 @@
     window.setTimeout(() => {
       cover.setAttribute("hidden", "");
       cover.style.display = "none";
-    }, 750);
+    }, REDUCE_MOTION ? 0 : 950);
+
+    setupReveal();
+    setupProgress();
+  }
+
+  function setupReveal() {
+    const nodes = [...document.querySelectorAll(".reveal")];
+    if (REDUCE_MOTION) {
+      nodes.forEach((n) => n.classList.add("is-in"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const delay = getComputedStyle(el).getPropertyValue("--d").trim() || "0ms";
+          el.style.transitionDelay = delay;
+          el.classList.add("is-in");
+          observer.unobserve(el);
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+    );
+    nodes.forEach((n) => observer.observe(n));
+  }
+
+  function setupProgress() {
+    const bar = $("#read-progress");
+    if (!bar) return;
+
+    const update = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+      bar.style.width = `${Math.min(100, Math.max(0, pct))}%`;
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
   }
 
   function setupNav() {
@@ -350,13 +427,13 @@
     window.addEventListener(
       "wheel",
       (e) => {
-        if ($("#cover").hasAttribute("hidden")) return;
+        if ($("#cover").hasAttribute("hidden") || $("#cover").classList.contains("is-leaving")) return;
         if (e.deltaY > 20) enterSite();
       },
       { passive: true }
     );
     window.addEventListener("keydown", (e) => {
-      if ($("#cover").hasAttribute("hidden")) return;
+      if ($("#cover").hasAttribute("hidden") || $("#cover").classList.contains("is-leaving")) return;
       if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
         e.preventDefault();
         enterSite();
@@ -380,8 +457,17 @@
       } catch (_) {
         skipCover = false;
       }
-      if (skipCover || location.hash) {
-        enterSite({ persist: true });
+
+      if (skipCover || location.hash || document.documentElement.classList.contains("skip-cover")) {
+        const site = $("#site");
+        site.hidden = false;
+        site.classList.add("is-visible");
+        const cover = $("#cover");
+        cover.setAttribute("hidden", "");
+        cover.style.display = "none";
+        haltFluid();
+        setupReveal();
+        setupProgress();
         if (location.hash) {
           requestAnimationFrame(() => {
             const target = document.querySelector(location.hash);
@@ -392,6 +478,7 @@
     } catch (err) {
       console.error(err);
       $("#cover-tagline").textContent = "Failed to load content. Please refresh.";
+      $("#cover-content")?.classList.add("is-ready");
     }
   }
 

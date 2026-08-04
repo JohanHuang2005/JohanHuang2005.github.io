@@ -14,12 +14,15 @@
 <body>
   <div id="cover" class="cover">
     <canvas id="background" class="cover-canvas"></canvas>
-    <div class="cover-content">
-      <p class="cover-kicker" id="cover-kicker">Personal Homepage</p>
-      <h1 class="cover-name" id="cover-name">Youhan Huang</h1>
-      <p class="cover-tagline" id="cover-tagline">Computer Vision · Intelligent Sensing</p>
-      <button type="button" class="cover-enter" id="cover-enter" aria-label="Enter site">Enter</button>
-      <div class="cover-links" id="cover-links"></div>
+    <div class="cover-content" id="cover-content">
+      <p class="cover-kicker cover-stage" id="cover-kicker">Personal Homepage</p>
+      <h1 class="cover-name cover-stage" id="cover-name">Youhan Huang</h1>
+      <p class="cover-tagline cover-stage" id="cover-tagline">Computer Vision · Intelligent Sensing</p>
+      <div class="cover-cta cover-stage">
+        <button type="button" class="cover-enter" id="cover-enter" aria-label="Enter site">Enter</button>
+        <span class="cover-hint" aria-hidden="true">↓</span>
+      </div>
+      <div class="cover-links cover-stage" id="cover-links"></div>
     </div>
   </div>
 
@@ -30,6 +33,7 @@
         <span></span><span></span>
       </button>
       <nav class="nav" id="nav" aria-label="Primary"></nav>
+      <div class="read-progress" id="read-progress" aria-hidden="true"></div>
     </header>
 
     <main id="main" class="main"></main>
