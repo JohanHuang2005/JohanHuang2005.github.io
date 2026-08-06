@@ -18,8 +18,6 @@
     "phone": "+86 13501173033",
     "github": "https://github.com/JohanHuang2005",
     "github_username": "JohanHuang2005",
-    "cv": "/assets/cv.pdf",
-    "cv_zh": "/assets/cv-zh.pdf",
     "avatar": "/assets/me.jpg",
     "interests": ["Computer Vision", "Machine Learning", "Intelligent Sensing"],
     "bio": "I am an undergraduate at BUPT working on computer vision and intelligent sensing. I care about clean problem formulations, reproducible experiments, and systems that connect perception algorithms to real sensing hardware."
@@ -112,10 +110,10 @@
   ],
   "intern": [
     {
-      "org": "Siemens · Data & Artificial Intelligence",
+      "org": "Siemens · DAI R AIX-CN",
       "role": "Intern",
       "period": "2026 – Present",
-      "summary": "Building automatic experiment agents, cleaning industrial datasets, and developing time-series world models for forecasting in industrial scenarios."
+      "summary": "Data & Artificial Intelligence, Research — AI Acceleration & Exploration. Building automatic experiment agents, cleaning industrial datasets, and developing time-series world models for forecasting in industrial scenarios."
     }
   ],
   "projects": [

@@ -250,6 +250,17 @@
     return sectionShell("skills", "Toolkit", "Skills", body);
   }
 
+  function cvMailto(email, lang) {
+    const isZh = lang === "zh";
+    const subject = isZh
+      ? "索取个人简历（中文）"
+      : "Request for CV (English)";
+    const body = isZh
+      ? "您好，希望索取您的中文个人简历，谢谢。"
+      : "Hello,\n\nI would like to request your English CV.\n\nThank you.";
+    return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
   function renderContact(profile) {
     const rows = [
       [
@@ -260,15 +271,16 @@
         "GitHub",
         `<a href="${profile.github}" target="_blank" rel="noopener noreferrer">${escapeHtml(profile.github_username || "GitHub")}</a>`
       ],
-      ["CV", `<a href="${profile.cv}" target="_blank" rel="noopener noreferrer">English PDF</a>`]
-    ];
-    if (profile.cv_zh) {
-      rows.push([
+      [
+        "CV",
+        `<a href="${cvMailto(profile.email, "en")}">Request via email</a>`
+      ],
+      [
         "CV (中文)",
-        `<a href="${profile.cv_zh}" target="_blank" rel="noopener noreferrer">Chinese PDF</a>`
-      ]);
-    }
-    rows.push(["Location", escapeHtml(profile.location)]);
+        `<a href="${cvMailto(profile.email, "zh")}">Request via email</a>`
+      ],
+      ["Location", escapeHtml(profile.location)]
+    ];
     const html = rows
       .map(
         ([label, value], i) => `

@@ -6,7 +6,7 @@ Pure static English homepage (no build step). Edit content in one file; GitHub P
 
 All copy lives in [`data/site.json`](data/site.json).
 
-Assets: `assets/me.jpg`, `assets/cv.pdf`, `assets/publications/`.
+Assets: `assets/me.jpg`, `assets/publications/`. CVs are available on request via email (not hosted on the site).
 
 ## Local preview
 
