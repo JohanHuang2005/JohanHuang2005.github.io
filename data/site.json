@@ -180,6 +180,6 @@
     "tools": ["PyTorch", "Git", "LaTeX", "Linux"],
     "english": "IELTS 7.5"
   },
-  "hobbies": ["Football", "Tennis", "Travel", "Reading"],
+  "hobbies": ["Football", "Tennis", "Travel & Reading"],
   "footer": "© {year} Youhan Huang."
 }
