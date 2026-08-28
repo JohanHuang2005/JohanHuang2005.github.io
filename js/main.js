@@ -10,10 +10,40 @@
     return res.json();
   }
 
-  function setMeta(meta) {
+  function setMeta(meta, analytics) {
     if (meta.title) document.title = meta.title;
     const desc = document.querySelector('meta[name="description"]');
     if (desc && meta.description) desc.setAttribute("content", meta.description);
+
+    const verification = analytics?.googleSiteVerification?.trim();
+    if (verification) {
+      let metaEl = document.querySelector('meta[name="google-site-verification"]');
+      if (!metaEl) {
+        metaEl = document.createElement("meta");
+        metaEl.setAttribute("name", "google-site-verification");
+        document.head.appendChild(metaEl);
+      }
+      metaEl.setAttribute("content", verification);
+    }
+  }
+
+  function initGa4(measurementId) {
+    const id = measurementId?.trim();
+    if (!id || !/^G-[A-Z0-9]+$/i.test(id)) return;
+    if (window.__ga4Initialized) return;
+    window.__ga4Initialized = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag("js", new Date());
+    window.gtag("config", id);
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+    document.head.appendChild(script);
   }
 
   function renderCover(data) {
@@ -456,7 +486,8 @@
   async function init() {
     try {
       const data = await loadSite();
-      setMeta(data.meta);
+      setMeta(data.meta, data.analytics);
+      initGa4(data.analytics?.ga4MeasurementId);
       renderCover(data);
       renderNav(data.nav);
       renderMain(data);
