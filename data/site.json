@@ -133,7 +133,7 @@
       "title": "学科评估网 (xuekepinggu.cn)",
       "role": "Collaborator",
       "period": "Aug 2026 – Present",
-      "summary": "Free multi-dimensional query site for Chinese higher education: five-round discipline evaluations (V4/V5 dual comparison plus V1–V3 history), domestic and global rankings, university maps and alliances, major–discipline matching, and gaokao score bands—for volunteer filling and graduate admissions (~2,940 schools). Contributions: data crawlers and Supabase import pipelines, historical-trend charts with Edge APIs, SEO static-page generation, GA4/SPA routing and mobile UX, etc. Reach: 400+ DAU; like/visit ≈ 1/10.",
+      "summary": "Multi-dimensional query site for Chinese university evaluations, rankings, and gaokao score bands (volunteer filling / graduate admissions); 400+ DAU, like/visit ≈ 1/10.",
       "links": {
         "website": "https://xuekepinggu.cn/"
       }
