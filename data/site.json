@@ -56,6 +56,10 @@
       "text": "Paper conditionally accepted at ACM SenSys 2027."
     },
     {
+      "date": "2026.08",
+      "text": "Joined as collaborator on 学科评估网 (xuekepinggu.cn); data pipelines, trend charts, SEO tooling, etc."
+    },
+    {
       "date": "2026.01",
       "text": "Co-first author (ranked first) paper accepted as Oral at ICME 2026 (CCF-B)."
     },
@@ -125,6 +129,15 @@
     }
   ],
   "projects": [
+    {
+      "title": "学科评估网 (xuekepinggu.cn)",
+      "role": "Collaborator",
+      "period": "Aug 2026 – Present",
+      "summary": "Free multi-dimensional query site for Chinese higher education: five-round discipline evaluations (V4/V5 dual comparison plus V1–V3 history), domestic and global rankings, university maps and alliances, major–discipline matching, and gaokao score bands—for volunteer filling and graduate admissions (~2,940 schools). Contributions: data crawlers and Supabase import pipelines, historical-trend charts with Edge APIs, SEO static-page generation, GA4/SPA routing and mobile UX, etc. Reach: 400+ DAU; like/visit ≈ 1/10.",
+      "links": {
+        "website": "https://xuekepinggu.cn/"
+      }
+    },
     {
       "title": "LidarCar",
       "role": "Team Lead",

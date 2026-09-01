@@ -221,10 +221,13 @@
   function renderProjects(items) {
     const html = items
       .map((item, i) => {
-        const link =
-          item.links && item.links.code
-            ? `<div class="pub-links"><a href="${item.links.code}" target="_blank" rel="noopener noreferrer">Code</a></div>`
-            : "";
+        const links = Object.entries(item.links || {})
+          .filter(([, url]) => url)
+          .map(
+            ([key, url]) =>
+              `<a href="${url}" target="_blank" rel="noopener noreferrer">${escapeHtml(labelForLink(key))}</a>`
+          )
+          .join("");
         return `
         <li class="card-item reveal" style="--d:${i * 60}ms">
           <div class="item-head">
@@ -233,7 +236,7 @@
           </div>
           <p class="item-sub">${escapeHtml(item.role)}</p>
           <p class="summary">${escapeHtml(item.summary)}</p>
-          ${link}
+          ${links ? `<div class="pub-links">${links}</div>` : ""}
         </li>`;
       })
       .join("");
@@ -343,7 +346,15 @@
   }
 
   function labelForLink(key) {
-    const map = { paper: "Paper", code: "Code", project: "Project", video: "Video", arxiv: "arXiv" };
+    const map = {
+      paper: "Paper",
+      code: "Code",
+      project: "Project",
+      website: "Website",
+      site: "Website",
+      video: "Video",
+      arxiv: "arXiv"
+    };
     return map[key] || key;
   }
 
