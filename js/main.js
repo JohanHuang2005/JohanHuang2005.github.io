@@ -283,14 +283,9 @@
     return sectionShell("skills", "Toolkit", "Skills", body);
   }
 
-  function cvMailto(email, lang) {
-    const isZh = lang === "zh";
-    const subject = isZh
-      ? "索取个人简历（中文）"
-      : "Request for CV (English)";
-    const body = isZh
-      ? "您好，希望索取您的中文个人简历，谢谢。"
-      : "Hello,\n\nI would like to request your English CV.\n\nThank you.";
+  function cvMailto(email) {
+    const subject = "Request for CV";
+    const body = "Hello,\n\nI would like to request your CV.\n\nThank you.";
     return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
@@ -306,11 +301,7 @@
       ],
       [
         "CV",
-        `<a href="${cvMailto(profile.email, "en")}">Request via email</a>`
-      ],
-      [
-        "CV (中文)",
-        `<a href="${cvMailto(profile.email, "zh")}">Request via email</a>`
+        `<a href="${cvMailto(profile.email)}">Request via email</a>`
       ],
       ["Location", escapeHtml(profile.location)]
     ];
