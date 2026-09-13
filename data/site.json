@@ -57,7 +57,7 @@
     },
     {
       "date": "2026.08",
-      "text": "Joined as collaborator on XueKePingGu (xuekepinggu.cn); data pipelines, trend charts, SEO tooling, etc."
+      "text": "Joined as collaborator on xuekepinggu.cn; data pipelines, trend charts, SEO tooling, etc."
     },
     {
       "date": "2026.01",
@@ -130,7 +130,7 @@
   ],
   "projects": [
     {
-      "title": "XueKePingGu (xuekepinggu.cn)",
+      "title": "xuekepinggu.cn",
       "role": "Collaborator",
       "period": "Aug 2026 – Present",
       "summary": "Multi-dimensional query site for Chinese university evaluations, rankings, and gaokao score bands (volunteer filling / graduate admissions); 400+ DAU, like/visit ≈ 1/10.",
