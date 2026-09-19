@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Youhan Huang",
-    "description": "Undergraduate at BUPT. Computer vision, intelligent sensing, and machine learning.",
+    "description": "Undergraduate at BUPT. Exploring multimodal perception and world models.",
     "url": "https://johanhuang2005.github.io"
   },
   "analytics": {
@@ -9,13 +9,13 @@
     "googleSiteVerification": ""
   },
   "cover": {
-    "name": "Youhan Huang",
-    "tagline": "Computer Vision · Intelligent Sensing",
+    "name": "Johan Huang",
+    "tagline": "Multimodal Perception · World Models",
     "cta": "Enter"
   },
   "profile": {
     "name": "Youhan Huang",
-    "role": "B.Sc. Student · Electronic Information Engineering",
+    "role": "BSc(Eng) Student · Electronic Information Engineering",
     "affiliation": "Beijing University of Posts and Telecommunications",
     "location": "Beijing, China",
     "email": "johanhuang@bupt.edu.cn",
@@ -23,8 +23,8 @@
     "github": "https://github.com/JohanHuang2005",
     "github_username": "JohanHuang2005",
     "avatar": "/assets/me.jpg",
-    "interests": ["Computer Vision", "Machine Learning", "Intelligent Sensing"],
-    "bio": "I am an undergraduate at BUPT working on computer vision and intelligent sensing. I care about clean problem formulations, reproducible experiments, and systems that connect perception algorithms to real sensing hardware."
+    "interests": ["Multimodal Perception", "World Models", "Computer Vision", "Intelligent Sensing"],
+    "bio": "I am an undergraduate at BUPT. My earlier work spanned machine learning, computer vision, and intelligent sensing; I am now exploring multimodal perception and world models. I care about clean problem formulations, reproducible experiments, and systems that connect algorithms to real sensing hardware."
   },
   "nav": [
     { "id": "about", "label": "About" },
@@ -40,8 +40,14 @@
   ],
   "education": [
     {
+      "school": "Peking University",
+      "degree": "MEng (upcoming)",
+      "period": "Sep 2027 – Jul 2030",
+      "details": []
+    },
+    {
       "school": "Beijing University of Posts and Telecommunications",
-      "degree": "B.Sc. in Electronic Information Engineering",
+      "degree": "BSc(Eng) in Electronic Information Engineering",
       "period": "Sep 2023 – Jul 2027",
       "details": [
         "GPA: 92+ / 100",
@@ -104,7 +110,7 @@
     {
       "org": "Peking University · Intelligent Wireless Sensing",
       "role": "Research Intern",
-      "period": "2024 – 2025",
+      "period": "2024 – 2026",
       "summary": "Worked on device-free multi-radar extrinsic calibration that models walking humans as elliptical cylinders for relative pose recovery. Also built end-to-end pipelines for real-time human pose estimation on low-cost 24 GHz mmWave radars under tight bandwidth constraints."
     },
     {
@@ -124,7 +130,7 @@
     {
       "org": "Siemens · DAI R AIX-CN",
       "role": "Intern",
-      "period": "2026 – Present",
+      "period": "Jul 2026 – Sep 2026",
       "summary": "Data & Artificial Intelligence, Research — AI Acceleration & Exploration. Building automatic experiment agents, cleaning industrial datasets, and developing time-series world models for forecasting in industrial scenarios."
     }
   ],
