@@ -595,6 +595,56 @@ html.skip-cover .site {
   margin: 0;
 }
 
+.news-more {
+  margin-top: 0.15rem;
+  border: none;
+  background: transparent;
+}
+
+.news-more-toggle {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.05rem;
+  letter-spacing: 0.42em;
+  text-align: center;
+  line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.news-more-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.news-more-toggle::marker {
+  content: "";
+}
+
+.news-more-toggle:hover,
+.news-more-toggle:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent);
+  outline: none;
+}
+
+.news-more[open] > .news-more-toggle {
+  color: var(--accent);
+  background: rgba(47, 111, 94, 0.06);
+  margin-bottom: 0.15rem;
+}
+
+.news-more-list .news-item:first-child {
+  border-top: 1px solid var(--line);
+}
+
 /* Publications */
 .pub-item {
   display: grid;

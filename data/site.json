@@ -22,6 +22,8 @@
     "phone": "+86 13501173033",
     "github": "https://github.com/JohanHuang2005",
     "github_username": "JohanHuang2005",
+    "xiaohongshu": "https://www.xiaohongshu.com/user/profile/5ed261c1000000000101f139",
+    "xiaohongshu_label": "Xiaohongshu",
     "avatar": "/assets/me.jpg",
     "interests": ["Multimodal Perception", "World Models", "Computer Vision", "Intelligent Sensing"],
     "bio": "I am an undergraduate at BUPT. My earlier work spanned machine learning, computer vision, and intelligent sensing; I am now exploring multimodal perception and world models. I care about clean problem formulations, reproducible experiments, and systems that connect algorithms to real sensing hardware."
@@ -58,36 +60,24 @@
   ],
   "news": [
     {
-      "date": "2026.10",
-      "text": "Awarded Xiaomi Scholarship (2025–2026; selection rate ≈1/600)."
-    },
-    {
       "date": "2026.09",
       "text": "Paper conditionally accepted at ACM SenSys 2027."
     },
     {
-      "date": "2026.08",
-      "text": "Joined as collaborator on xuekepinggu.cn; data pipelines, trend charts, SEO tooling, etc."
-    },
-    {
       "date": "2026.01",
-      "text": "Co-first author (ranked first) paper accepted as Oral at ICME 2026 (CCF-B)."
+      "text": "ICME 2026 Oral (CCF-B); co-first author."
     },
     {
       "date": "2025.11",
-      "text": "Joined the Image Aesthetics Assessment group at BUPT; working on long-form video aesthetics assessment."
-    },
-    {
-      "date": "2025.10",
-      "text": "Led construction of a multi-task mouse NAFLD pathology scoring dataset."
+      "text": "Joined BUPT Image Aesthetics Assessment Lab."
     },
     {
       "date": "2025.04",
-      "text": "Joined the Pattern Recognition & Intelligent Vision Lab at BUPT for polarization-guided transparent object reconstruction."
+      "text": "Joined BUPT Pattern Recognition & Intelligent Vision Lab."
     },
     {
       "date": "2024.08",
-      "text": "Started research internship at Peking University."
+      "text": "Joined Peking University intelligent wireless sensing group."
     }
   ],
   "publications": [
@@ -183,7 +173,7 @@
     },
     {
       "title": "Xiaomi Scholarship",
-      "meta": "BUPT · 2025–2026 · selection rate ≈1/600"
+      "meta": "BUPT · 2025–2026 · selection rate ≈0.17%"
     },
     {
       "title": "Outstanding Student",

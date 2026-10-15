@@ -141,17 +141,31 @@
     return sectionShell("education", "Background", "Education", `<ul class="timeline">${html}</ul>`);
   }
 
-  function renderNews(items) {
-    const html = items
-      .map(
-        (item, i) => `
-      <li class="news-item reveal" style="--d:${i * 50}ms">
+  function newsItemHtml(item, i, { reveal = true } = {}) {
+    const cls = reveal ? "news-item reveal" : "news-item";
+    const delay = reveal ? ` style="--d:${i * 50}ms"` : "";
+    return `
+      <li class="${cls}"${delay}>
         <span class="news-date">${escapeHtml(item.date)}</span>
         <p class="news-text">${escapeHtml(item.text)}</p>
-      </li>`
-      )
-      .join("");
-    return sectionShell("news", "Updates", "News", `<ul class="plain-list">${html}</ul>`);
+      </li>`;
+  }
+
+  function renderNews(items) {
+    if (!items?.length) return "";
+    const visible = items.slice(0, 2);
+    const rest = items.slice(2);
+    let body = `<ul class="plain-list">${visible.map((item, i) => newsItemHtml(item, i)).join("")}</ul>`;
+    if (rest.length) {
+      body += `
+      <details class="news-more">
+        <summary class="news-more-toggle" aria-label="Show earlier updates">···</summary>
+        <ul class="plain-list news-more-list">${rest
+          .map((item, i) => newsItemHtml(item, i, { reveal: false }))
+          .join("")}</ul>
+      </details>`;
+    }
+    return sectionShell("news", "Updates", "News", body);
   }
 
   function renderPublications(items) {
@@ -298,13 +312,20 @@
       [
         "GitHub",
         `<a href="${profile.github}" target="_blank" rel="noopener noreferrer">${escapeHtml(profile.github_username || "GitHub")}</a>`
-      ],
-      [
-        "CV",
-        `<a href="${cvMailto(profile.email)}">Request via email</a>`
-      ],
-      ["Location", escapeHtml(profile.location)]
+      ]
     ];
+    if (profile.xiaohongshu) {
+      rows.push([
+        "Xiaohongshu",
+        `<a href="${profile.xiaohongshu}" target="_blank" rel="noopener noreferrer">${escapeHtml(
+          profile.xiaohongshu_label || "Profile"
+        )}</a>`
+      ]);
+    }
+    rows.push(
+      ["CV", `<a href="${cvMailto(profile.email)}">Request via email</a>`],
+      ["Location", escapeHtml(profile.location)]
+    );
     const html = rows
       .map(
         ([label, value], i) => `
