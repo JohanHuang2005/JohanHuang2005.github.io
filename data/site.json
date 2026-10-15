@@ -24,7 +24,7 @@
     "github": "https://github.com/JohanHuang2005",
     "github_username": "JohanHuang2005",
     "xiaohongshu": "https://www.xiaohongshu.com/user/profile/5ed261c1000000000101f139",
-    "xiaohongshu_label": "Xiaohongshu",
+    "xiaohongshu_label": "RedNote",
     "avatar": "/assets/me.jpg",
     "interests": ["Perception", "Understanding", "Forecasting", "Intelligent Sensing"],
     "bio": "I am an undergraduate at BUPT. My work asks a recurring question: from incomplete, noisy, or physically constrained observations, how can we recover reliable structure and state—and turn methods into verifiable systems? Across sensing, vision, and time-series modeling, I care about clean problem formulations, reproducible experiments, and systems that connect algorithms to real hardware."
@@ -44,7 +44,7 @@
   "education": [
     {
       "school": "Peking University",
-      "degree": "MEng in Electronic Information Engineering (upcoming)",
+      "degree": "Master of Electronic Information (upcoming)",
       "period": "Sep 2027 – Jul 2030",
       "details": []
     },

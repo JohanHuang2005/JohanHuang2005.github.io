@@ -326,9 +326,9 @@
     ];
     if (profile.xiaohongshu) {
       rows.push([
-        "Xiaohongshu",
+        "RedNote",
         `<a href="${profile.xiaohongshu}" target="_blank" rel="noopener noreferrer">${escapeHtml(
-          profile.xiaohongshu_label || "Profile"
+          profile.xiaohongshu_label || "RedNote"
         )}</a>`
       ]);
     }
