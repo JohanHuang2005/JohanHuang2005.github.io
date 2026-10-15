@@ -44,7 +44,7 @@
   "education": [
     {
       "school": "Peking University",
-      "degree": "MEng (upcoming)",
+      "degree": "MEng in Electronic Information Engineering (upcoming)",
       "period": "Sep 2027 – Jul 2030",
       "details": []
     },
@@ -52,11 +52,7 @@
       "school": "Beijing University of Posts and Telecommunications",
       "degree": "BSc(Eng) in Electronic Information Engineering",
       "period": "Sep 2023 – Jul 2027",
-      "details": [
-        "GPA: 92+ / 100",
-        "Rank: top <2%",
-        "Selected coursework: Engineering Mathematics (97), Linear Algebra (94), Computer Networks (97), Programming Fundamentals (96), Introduction to AI (95), Machine Learning (95)"
-      ]
+      "details": []
     }
   ],
   "news": [
@@ -66,7 +62,7 @@
     },
     {
       "date": "2026.01",
-      "text": "ICME 2026 Oral (CCF-B); co-first author."
+      "text": "ICME 2026 Oral Presentation"
     },
     {
       "date": "2025.11",
@@ -100,7 +96,7 @@
       "org": "BUPT × Capital Medical University",
       "role": "Project Lead · Mouse NAFLD Multi-Task Pathology Scoring",
       "period": "2025 – 2026",
-      "summary": "Built a curated multi-task NAFLD histology dataset and a subspace-decoupled multi-task ViT with task-specific Adapters and orthogonality constraints to reduce negative transfer among NAS indicators. Co-first author (ranked first); ICME 2026 Oral."
+      "summary": "Built a curated multi-task NAFLD histology dataset and a subspace-decoupled multi-task ViT with task-specific Adapters and orthogonality constraints to reduce negative transfer among NAS indicators."
     },
     {
       "org": "Peking University · Intelligent Wireless Sensing",
