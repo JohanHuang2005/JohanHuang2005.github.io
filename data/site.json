@@ -58,6 +58,10 @@
   ],
   "news": [
     {
+      "date": "2026.10",
+      "text": "Awarded Xiaomi Scholarship (2025–2026; selection rate ≈1/600)."
+    },
+    {
       "date": "2026.09",
       "text": "Paper conditionally accepted at ACM SenSys 2027."
     },
@@ -138,7 +142,7 @@
     {
       "title": "xuekepinggu.cn",
       "role": "Collaborator",
-      "period": "Aug 2026 – Present",
+      "period": "Aug 2026 – Sep 2026",
       "summary": "Multi-dimensional query site for Chinese university evaluations, rankings, and gaokao score bands (volunteer filling / graduate admissions); 400+ DAU, like/visit ≈ 1/10.",
       "links": {
         "website": "https://xuekepinggu.cn/"
@@ -178,8 +182,12 @@
       "meta": "BUPT · 2023–2024, 2024–2025"
     },
     {
+      "title": "Xiaomi Scholarship",
+      "meta": "BUPT · 2025–2026 · selection rate ≈1/600"
+    },
+    {
       "title": "Outstanding Student",
-      "meta": "BUPT · 2023–2024, 2024–2025"
+      "meta": "BUPT · 2023–2024, 2024–2025, 2025–2026"
     },
     {
       "title": "Outstanding Peer Tutoring Volunteer",
