@@ -112,8 +112,9 @@ html.skip-cover .cover {
 .cover-content.is-ready .cover-kicker { animation-delay: 0.05s; }
 .cover-content.is-ready .cover-name { animation-delay: 0.18s; }
 .cover-content.is-ready .cover-tagline { animation-delay: 0.32s; }
-.cover-content.is-ready .cover-cta { animation-delay: 0.48s; }
-.cover-content.is-ready .cover-links { animation-delay: 0.62s; }
+.cover-content.is-ready .cover-blurb { animation-delay: 0.4s; }
+.cover-content.is-ready .cover-cta { animation-delay: 0.55s; }
+.cover-content.is-ready .cover-links { animation-delay: 0.68s; }
 
 @keyframes cover-rise {
   to {
@@ -140,9 +141,21 @@ html.skip-cover .cover {
 }
 
 .cover-tagline {
-  margin: 1rem 0 2rem;
+  margin: 1rem 0 0;
   color: var(--cover-muted);
   font-size: clamp(1rem, 2.4vw, 1.15rem);
+}
+
+.cover-blurb {
+  margin: 0.85rem auto 2rem;
+  max-width: 34rem;
+  color: rgba(243, 245, 242, 0.58);
+  font-size: clamp(0.88rem, 2vw, 0.98rem);
+  line-height: 1.55;
+}
+
+.cover-blurb[hidden] {
+  display: none;
 }
 
 .cover-cta {

@@ -50,6 +50,16 @@
     const { cover, profile } = data;
     $("#cover-name").textContent = cover.name;
     $("#cover-tagline").textContent = cover.tagline;
+    const blurb = $("#cover-blurb");
+    if (blurb) {
+      if (cover.blurb) {
+        blurb.textContent = cover.blurb;
+        blurb.hidden = false;
+      } else {
+        blurb.textContent = "";
+        blurb.hidden = true;
+      }
+    }
     $("#cover-enter").textContent = cover.cta || "Enter";
 
     const links = $("#cover-links");

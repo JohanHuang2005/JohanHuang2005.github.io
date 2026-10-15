@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Youhan Huang",
-    "description": "Undergraduate at BUPT. Exploring multimodal perception and world models.",
+    "description": "Undergraduate at BUPT. Perception, understanding, and forecasting under incomplete, noisy, or physically constrained observations.",
     "url": "https://johanhuang2005.github.io"
   },
   "analytics": {
@@ -10,7 +10,8 @@
   },
   "cover": {
     "name": "Johan Huang",
-    "tagline": "Multimodal Perception · World Models",
+    "tagline": "Perception · Understanding · Forecasting",
+    "blurb": "From incomplete, noisy, or physically constrained observations, recover reliable structure and state—and ground methods in verifiable systems.",
     "cta": "Enter"
   },
   "profile": {
@@ -25,8 +26,8 @@
     "xiaohongshu": "https://www.xiaohongshu.com/user/profile/5ed261c1000000000101f139",
     "xiaohongshu_label": "Xiaohongshu",
     "avatar": "/assets/me.jpg",
-    "interests": ["Multimodal Perception", "World Models", "Computer Vision", "Intelligent Sensing"],
-    "bio": "I am an undergraduate at BUPT. My earlier work spanned machine learning, computer vision, and intelligent sensing; I am now exploring multimodal perception and world models. I care about clean problem formulations, reproducible experiments, and systems that connect algorithms to real sensing hardware."
+    "interests": ["Perception", "Understanding", "Forecasting", "Intelligent Sensing"],
+    "bio": "I am an undergraduate at BUPT. My work asks a recurring question: from incomplete, noisy, or physically constrained observations, how can we recover reliable structure and state—and turn methods into verifiable systems? Across sensing, vision, and time-series modeling, I care about clean problem formulations, reproducible experiments, and systems that connect algorithms to real hardware."
   },
   "nav": [
     { "id": "about", "label": "About" },
