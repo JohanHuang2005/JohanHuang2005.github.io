@@ -57,8 +57,8 @@
   ],
   "news": [
     {
-      "date": "2026.09",
-      "text": "Paper conditionally accepted at ACM SenSys 2027."
+      "date": "2026.10",
+      "text": "Paper accepted at ACM SenSys 2027."
     },
     {
       "date": "2026.01",
@@ -79,11 +79,20 @@
   ],
   "publications": [
     {
+      "id": "sensys2027",
+      "status": "accepted",
+      "title": "mmGlimpse: Breaking the Bandwidth Barrier for Real-time Human Pose Estimation with Low-cost 24 GHz mmWave Radar",
+      "authors": "Zizhou Fan, Hongliu Yang, Zhehui Yin, Jie Xiong, Duo Zhang, Xusheng Zhang, <strong>Youhan Huang</strong>, Zhiyun Yao, Daqing Zhang",
+      "venue": "ACM SenSys 2027",
+      "year": 2027,
+      "links": {}
+    },
+    {
       "id": "icme2026",
       "status": "accepted",
       "title": "Parameter-Efficient Subspace Decoupling ViT for Mitigating Multi-Task Negative Transfer in Histological Scoring",
       "authors": "<strong>Youhan Huang</strong>*, Jiajun Li*, Yilin Fang*, Shuai Wang, Chuheng Li",
-      "venue": "IEEE ICME 2026, Oral (CCF-B)",
+      "venue": "IEEE ICME 2026, Oral",
       "year": 2026,
       "image": "/assets/publications/pub-icme-2026.jpg",
       "links": {
