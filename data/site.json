@@ -57,6 +57,10 @@
   ],
   "news": [
     {
+      "date": "2026.11",
+      "text": "Paper accepted at IEEE Transactions on Mobile Computing."
+    },
+    {
       "date": "2026.10",
       "text": "Paper accepted at ACM SenSys 2027."
     },
@@ -78,6 +82,15 @@
     }
   ],
   "publications": [
+    {
+      "id": "tmc2026",
+      "status": "accepted",
+      "title": "Turning Human Motion into a Calibration Ruler: Device-Free Calibration for Multi-Radar Networks",
+      "authors": "Zizhou Fan, Hongliu Yang, Jie Xiong, <strong>Youhan Huang</strong>, Xusheng Zhang, Duo Zhang, Wanru Ning, Jiarun Zhou, Junzhe Wang, Zhehui Yin, Daqing Zhang",
+      "venue": "IEEE Transactions on Mobile Computing",
+      "year": 2026,
+      "links": {}
+    },
     {
       "id": "sensys2027",
       "status": "accepted",
@@ -111,7 +124,7 @@
       "org": "Peking University · Intelligent Wireless Sensing",
       "role": "Research Intern",
       "period": "2024 – 2026",
-      "summary": "Worked on device-free multi-radar extrinsic calibration that models walking humans as elliptical cylinders for relative pose recovery. Also built end-to-end pipelines for real-time human pose estimation on low-cost 24 GHz mmWave radars under tight bandwidth constraints."
+      "summary": "Worked on TriCal, a device-free multi-radar extrinsic calibration method that models walking humans as elliptical cylinders for relative pose recovery (IEEE Transactions on Mobile Computing, accepted). Also built end-to-end pipelines for real-time human pose estimation on low-cost 24 GHz mmWave radars under tight bandwidth constraints."
     },
     {
       "org": "BUPT · Pattern Recognition & Intelligent Vision Lab",
